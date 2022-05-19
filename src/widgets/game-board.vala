@@ -18,25 +18,37 @@
 
 namespace WindowPainter {
     public class Square : Adw.Bin {
-        public string colour { get; construct; }
+        public Colours colour { get; construct; }
         public int size { get; construct; }
+        
+        public void reset_colour (Colours colour) {
+            for (var i = 0; i < 6; i++) {
+                this.get_style_context ().remove_class (Colours.get_for_pos (i).get_style_class ());
+            }
+            
+            this.get_style_context ().add_class (colour.get_style_class ());
+            
+        }
     
         public Square (Colours colour, int size = 32) {
             Object (
-                colour: colour.get_style_class (),
+                colour: colour,
                 size: size
             );
         }
         
         construct {
             set_size_request (size, size);
-            this.get_style_context ().add_class (colour);
+            this.get_style_context ().add_class (colour.get_style_class ());
         }
     }
 
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/game-board.ui")]
     public class GameBoard : Gtk.Grid {
+        public Colours current_colour { get; set; }
+    
         public Gee.List<Square> squares { get; construct; }
+        private Gee.List<int> flooded_indices;
     
         public GameBoard () {
             Object ();
@@ -44,9 +56,24 @@ namespace WindowPainter {
         
         construct {
             squares = new Gee.ArrayList<Square> ();
+            flooded_indices = new Gee.ArrayList<int> ();
             
             dispose_ui ();
+            initialise ();
+            
+            Signals.get_default ().do_button_click.connect ((colour) => {
+                flood (colour);
+            });
+        }
+        
+        private void initialise () {
+            flooded_indices.clear ();
+        
             setup_ui ();
+            
+            current_colour = squares.get (0).colour;
+            flooded_indices.add (0);
+            update_flooded_indices ();
         }
         
         private void setup_ui () {
@@ -65,6 +92,55 @@ namespace WindowPainter {
             foreach (var square in squares) {
                 square.dispose ();
             }
+        }
+        
+        public void flood (Colours new_colour) {
+            current_colour = new_colour;
+            foreach (int index in flooded_indices) {
+                squares.get (index).reset_colour (new_colour);
+            }
+            
+            if (update_flooded_indices ()) {
+                return;
+            }
+        }
+        
+        // This is… not ideal… but it works!
+        private bool update_flooded_indices () {
+            Gee.Set<int> new_indices = new Gee.HashSet<int> ();
+            do {
+                new_indices.clear ();
+                foreach (int index in flooded_indices) {
+                    int row = index / 10;
+                    int col = index % 10;
+                    // Look up
+                    int? north_neighbor_index = index_for_coord (row - 1, col);
+                    if (should_flood_neighbor (north_neighbor_index)) {
+                        new_indices.add (north_neighbor_index);
+                    }
+                    // Look left
+                    int? west_neighbor_index = index_for_coord (row, col - 1);
+                    if (should_flood_neighbor (west_neighbor_index)) {
+                        new_indices.add (west_neighbor_index);
+                    }
+                    // Look down
+                    int? south_neighbor_index = index_for_coord (row + 1, col);
+                    if (should_flood_neighbor (south_neighbor_index)) {
+                        new_indices.add (south_neighbor_index);
+                    }
+                    // Look right
+                    int? east_neighbor_index = index_for_coord (row, col + 1);
+                    if (should_flood_neighbor (east_neighbor_index)) {
+                        new_indices.add (east_neighbor_index);
+                    }
+                }
+                flooded_indices.add_all (new_indices);
+            } while (new_indices.size > 0);
+            return flooded_indices.size == (10 * 10);
+        }
+
+        private bool should_flood_neighbor (int? neighbor_index) {
+            return neighbor_index != null && !flooded_indices.contains (neighbor_index) && (squares.get (neighbor_index).colour == current_colour);
         }
         
          /*

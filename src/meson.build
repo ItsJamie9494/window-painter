@@ -3,7 +3,8 @@ sources = [
   'application.vala',
   'widgets/colour-switcher.vala',
   'widgets/game-board.vala',
-  'models/colours.vala'
+  'models/colours.vala',
+  'objects/signals.vala'
 ]
 
 deps = [

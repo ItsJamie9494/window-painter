@@ -1,4 +1,4 @@
-/* widgets/colour-switcher.vala
+/* objects/signals.vala
  *
  * Copyright 2022 Jamie Murphy
  *
@@ -16,20 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WindowPainter {
-    [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/colour-switcher.ui")]
-    public class ColourSwitcher : Gtk.Box {
-        [GtkCallback]
-        public void button_click (Gtk.Button source) {
-            for (var i = 0; i < 6; i++) {
-                if (source.get_style_context ().has_class (Colours.get_for_pos (i).get_style_class ())) {
-                    Signals.get_default ().do_button_click (Colours.get_for_pos (i));
-                }
-            }
+public class Signals : GLib.Object {
+    private static Signals _signals;
+    public static unowned Signals get_default () {
+        if (_signals == null) {
+            _signals = new Signals ();
         }
-        
-        public ColourSwitcher () {
-            Object ();
-        }
+
+        return _signals;
     }
+
+    public signal void do_button_click (WindowPainter.Colours colour);
 }
+
