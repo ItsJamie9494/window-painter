@@ -19,9 +19,6 @@
 namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/window.ui")]
     public class Window : Adw.ApplicationWindow {
-        [GtkChild]
-        private unowned Gtk.Label label;
-
         public Window (Gtk.Application app) {
             Object (application: app);
         }
