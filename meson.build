@@ -16,6 +16,12 @@ gnome = import('gnome')
 
 application_id = 'dev.jamiethalacker.window_painter'
 
+asresources = gnome.compile_resources(
+	'as-resources', join_paths(meson.project_source_root(), 'data', application_id + '.gresource.xml'),
+	source_dir: join_paths(meson.project_source_root(), 'data'),
+	c_name: 'as'
+)
+
 
 subdir('data')
 subdir('src')

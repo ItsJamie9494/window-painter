@@ -1,8 +1,6 @@
 /* application.vala
-
  *
  * Copyright 2022 Jamie Murphy
-
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,4 +53,9 @@ namespace WindowPainter {
             message ("app.preferences action activated");
         }
     }
+}
+
+int main (string[] args) {
+    var app = new WindowPainter.Application ();
+    return app.run (args);
 }

@@ -1,8 +1,6 @@
 /* window.vala
-
  *
  * Copyright 2022 Jamie Murphy
-
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +18,7 @@
 
 namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/window.ui")]
-    public class Window : Gtk.ApplicationWindow {
+    public class Window : Adw.ApplicationWindow {
         [GtkChild]
         private unowned Gtk.Label label;
 
