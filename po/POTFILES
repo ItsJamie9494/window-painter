@@ -1,0 +1,8 @@
+data/dev.jamiethalacker.window_painter.desktop.in
+data/dev.jamiethalacker.window_painter.appdata.xml.in
+data/dev.jamiethalacker.window_painter.gschema.xml
+src/window.ui
+
+src/main.vala
+src/window.vala
+

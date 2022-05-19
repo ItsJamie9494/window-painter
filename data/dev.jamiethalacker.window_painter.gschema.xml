@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="window_painter">
+	<schema id="dev.jamiethalacker.window_painter" path="/dev/jamiethalacker/window_painter/">
+	</schema>
+</schemalist>
