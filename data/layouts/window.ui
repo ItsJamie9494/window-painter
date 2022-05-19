@@ -27,11 +27,6 @@
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <child>
-                    <object class="GtkLabel">
-                        <property name="label">Header Bar</property>
-                    </object>
-                </child>
-                <child>
                     <object class="GtkRevealer">
                         <property name="transition-type">slide-down</property>
                         <property name="hexpand">true</property>
@@ -70,20 +65,10 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GtkLabel">
-                        <property name="label" translatable="yes">TODO add gameboard</property>
-                        <style>
-                            <class name="title-1" />
-                        </style>
-                    </object>
+                    <object class="WindowPainterGameBoard"></object>
                 </child>
                 <child>
-                    <object class="GtkLabel">
-                        <property name="label" translatable="yes">TODO add control board</property>
-                        <style>
-                            <class name="title-1" />
-                        </style>
-                    </object>
+                    <object class="WindowPainterColourSwitcher"></object>
                 </child>
               </object>
             </child>

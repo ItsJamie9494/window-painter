@@ -31,6 +31,23 @@ namespace WindowPainter {
             this.add_action_entries (action_entries, this);
             this.set_accels_for_action ("app.quit", {"<primary>q"});
         }
+        
+        protected override void startup () {
+            resource_base_path = "/dev/jamiethalacker/window_painter";
+
+            base.startup ();
+            
+            typeof (ColourSwitcher).ensure ();
+            typeof (GameBoard).ensure ();
+            
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("/dev/jamiethalacker/window_painter/colours.css");
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
+        }
 
         public override void activate () {
             base.activate ();
