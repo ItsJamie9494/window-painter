@@ -70,7 +70,7 @@
             <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
-                <class name="fermion-pink" />
+                <class name="gluon-brown" />
             </style>
         </object>
     </child>

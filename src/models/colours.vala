@@ -23,7 +23,7 @@ namespace WindowPainter {
         MUON_GREEN,
         PROTON_BLUE,
         TAU_PURPLE,
-        FERMION_PINK;
+        GLUON_BROWN;
         
         public string get_style_class () {
             switch (this) {
@@ -37,8 +37,8 @@ namespace WindowPainter {
                     return "proton-blue";
                 case TAU_PURPLE:
                     return "tau-purple";
-                case FERMION_PINK:
-                    return "fermion-pink";
+                case GLUON_BROWN:
+                    return "gluon-brown";
                 default:
                     assert_not_reached ();
             }
