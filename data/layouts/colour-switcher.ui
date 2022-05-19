@@ -12,6 +12,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="meson-red" />
@@ -22,6 +23,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="electron-yellow" />
@@ -32,6 +34,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="muon-green" />
@@ -42,6 +45,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="proton-blue" />
@@ -52,6 +56,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="tau-purple" />
@@ -62,6 +67,7 @@
         <object class="GtkButton">
             <property name="height-request">64</property>
             <property name="width-request">64</property>
+            <signal name="clicked" handler="button_click" />
             <style>
                 <class name="circular" />
                 <class name="fermion-pink" />

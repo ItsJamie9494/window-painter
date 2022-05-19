@@ -71,12 +71,25 @@
                 </child>
               </object>
             </child>
+            <child>
+                <object class="GtkBox">
+                    <property name="visible">false</property>
+                    <child type="experiment">
+              <object class="GtkLabel">
+                  <property name="label">yeehaw?</property>
+              </object>
+                    </child>
+                </object>
+            </child>
         </object>
     </child>
   </template>
 
   <menu id="primary_menu">
     <section>
+      <item>
+        <attribute name="custom">experiment</attribute>
+      </item>
       <item>
         <attribute name="label" translatable="yes">_Preferences</attribute>
         <attribute name="action">app.preferences</attribute>
