@@ -44,6 +44,10 @@ namespace WindowPainter {
             }
         }
         
+        public static Colours get_for_pos (int position) {
+            return (Colours)position;
+        }
+        
         public static Colours get_random () {
             return (Colours) GLib.Random.int_range (0, 6);
         }
