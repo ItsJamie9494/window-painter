@@ -26,6 +26,16 @@ namespace WindowPainter {
                     Signals.get_default ().do_button_click (Colours.get_for_pos (i));
                 }
             }
+
+            var widget = this.get_first_child ();
+            for (var i = 0; i < 6; i++) {
+                if (widget != null) {
+                    widget.set_sensitive (true);
+                    widget = widget.get_next_sibling ();
+                }
+            }
+
+            source.set_sensitive (false);
         }
         
         public ColourSwitcher () {
