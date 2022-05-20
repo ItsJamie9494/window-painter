@@ -22,5 +22,17 @@ namespace WindowPainter {
         public VictoryDialog () {
             Object ();
         }
+
+        construct {
+            this.response.connect ((response_id)=> {
+                if (response_id == Gtk.ResponseType.OK) {
+                    // START NEW GAME
+                }
+
+                if (response_id == Gtk.ResponseType.CANCEL) {
+                    this.close ();
+                }
+            });
+        }
     }
 }
