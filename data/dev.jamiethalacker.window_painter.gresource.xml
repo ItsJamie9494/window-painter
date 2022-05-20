@@ -4,6 +4,7 @@
     <file alias="window.ui">layouts/window.ui</file>
     <file alias="colour-switcher.ui">layouts/colour-switcher.ui</file>
     <file alias="game-board.ui">layouts/game-board.ui</file>
+    <file alias="victory-dialog.ui">layouts/victory-dialog.ui</file>
     
     <file alias="colours.css">styles/colours.css</file>
     <file>gtk/help-overlay.ui</file>

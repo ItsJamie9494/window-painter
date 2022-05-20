@@ -1,10 +1,12 @@
 sources = [
   'window.vala',
   'application.vala',
+  'utils.vala',
   'widgets/colour-switcher.vala',
   'widgets/game-board.vala',
   'models/colours.vala',
-  'objects/signals.vala'
+  'objects/signals.vala',
+  'dialogs/victory-dialog.vala'
 ]
 
 deps = [
