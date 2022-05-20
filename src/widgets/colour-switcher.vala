@@ -51,11 +51,8 @@ namespace WindowPainter {
             Signals.get_default ().set_current_colour.connect ((colour) => {
                 var widget = this.get_first_child ();
                 for (var i = 0; i < 6; i++) {
-
                     if (widget != null) {
-
                         if (widget.get_style_context ().has_class (colour.get_style_class ())) {
-
                             widget.set_sensitive (false);
                         }
                         widget = widget.get_next_sibling ();

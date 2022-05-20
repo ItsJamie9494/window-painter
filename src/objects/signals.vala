@@ -26,6 +26,7 @@ public class Signals : GLib.Object {
         return _signals;
     }
 
+    public signal void new_game ();
     public signal void switcher_active ();
     public signal void set_current_colour (WindowPainter.Colours colour);
     public signal void do_button_click (WindowPainter.Colours colour);

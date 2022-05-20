@@ -71,6 +71,12 @@ namespace WindowPainter {
             Signals.get_default ().switcher_active.connect (() => {
                 Signals.get_default ().set_current_colour (current_colour);
             });
+
+            Signals.get_default ().new_game.connect (() => {
+                dispose_ui ();
+                Signals.get_default ().set_current_colour (current_colour);
+                initialise ();
+            });
         }
         
         private void initialise () {
@@ -101,6 +107,7 @@ namespace WindowPainter {
         
         private void dispose_ui () {
             foreach (var square in squares) {
+                square.unparent ();
                 square.dispose ();
             }
         }

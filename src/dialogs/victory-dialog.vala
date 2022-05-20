@@ -26,7 +26,8 @@ namespace WindowPainter {
         construct {
             this.response.connect ((response_id)=> {
                 if (response_id == Gtk.ResponseType.OK) {
-                    // START NEW GAME
+                    Signals.get_default ().new_game ();
+                    this.close ();
                 }
 
                 if (response_id == Gtk.ResponseType.CANCEL) {
