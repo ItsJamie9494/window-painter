@@ -60,19 +60,14 @@ namespace WindowPainter {
                 provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
-
-
         }
 
         public override void activate () {
-
             base.activate ();
 
-
-
-            if (difficulty > 3) {
+            if (difficulty > 3 || difficulty == 0 || difficulty < 0) {
                 warning ("Difficulty value %i does not exist.\nPermitted values: 1, 2, 3".printf (difficulty));
-            } else if (difficulty != 0 && !(difficulty > 3)) {
+            } else if (difficulty != 0 && !(difficulty > 3)  && !(difficulty < 0)) {
                 settings.set_int ("difficulty", difficulty - 1);
             }
 
