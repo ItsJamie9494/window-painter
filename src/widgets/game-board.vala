@@ -64,6 +64,10 @@ namespace WindowPainter {
             Signals.get_default ().do_button_click.connect ((colour) => {
                 flood (colour);
             });
+
+            Signals.get_default ().switcher_active.connect (() => {
+                Signals.get_default ().set_current_colour (current_colour);
+            });
         }
         
         private void initialise () {
@@ -101,6 +105,10 @@ namespace WindowPainter {
             }
             
             if (update_flooded_indices ()) {
+                var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
+                var dialog = new VictoryDialog ();
+                dialog.set_transient_for (win);
+                dialog.present ();
                 return;
             }
         }

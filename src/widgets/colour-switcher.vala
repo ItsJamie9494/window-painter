@@ -20,6 +20,11 @@ namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/colour-switcher.ui")]
     public class ColourSwitcher : Gtk.Box {
         [GtkCallback]
+        public void on_realize () {
+            Signals.get_default ().switcher_active ();
+        }
+
+        [GtkCallback]
         public void button_click (Gtk.Button source) {
             for (var i = 0; i < 6; i++) {
                 if (source.get_style_context ().has_class (Colours.get_for_pos (i).get_style_class ())) {
@@ -40,6 +45,23 @@ namespace WindowPainter {
         
         public ColourSwitcher () {
             Object ();
+        }
+
+        construct {
+            Signals.get_default ().set_current_colour.connect ((colour) => {
+                var widget = this.get_first_child ();
+                for (var i = 0; i < 6; i++) {
+
+                    if (widget != null) {
+
+                        if (widget.get_style_context ().has_class (colour.get_style_class ())) {
+
+                            widget.set_sensitive (false);
+                        }
+                        widget = widget.get_next_sibling ();
+                    }
+                }
+            });
         }
     }
 }
