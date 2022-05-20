@@ -18,16 +18,29 @@
 
 namespace WindowPainter {
     public class Application : Adw.Application {
+        public static Settings settings;
+
+        private const OptionEntry[] options = {
+            { "difficulty", 'd', 0, OptionArg.INT, out difficulty,
+              "Set difficulty", "DIFFICULTY (1, 2, 3)"},
+            { null }
+        };
+
+        public static int difficulty;
+
+        private const ActionEntry[] action_entries = {
+            { "about", on_about_action },
+            { "preferences", on_preferences_action },
+            { "quit", quit }
+        };
+
         public Application () {
             Object (application_id: "dev.jamiethalacker.window_painter", flags: ApplicationFlags.FLAGS_NONE);
         }
 
         construct {
-            ActionEntry[] action_entries = {
-                { "about", this.on_about_action },
-                { "preferences", this.on_preferences_action },
-                { "quit", this.quit }
-            };
+            settings = new GLib.Settings ("dev.jamiethalacker.window_painter");
+            this.add_main_option_entries (options);
             this.add_action_entries (action_entries, this);
             this.set_accels_for_action ("app.quit", {"<primary>q"});
         }
@@ -47,10 +60,22 @@ namespace WindowPainter {
                 provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
+
+
         }
 
         public override void activate () {
+
             base.activate ();
+
+
+
+            if (difficulty > 3) {
+                warning ("Difficulty value %i does not exist.\nPermitted values: 1, 2, 3".printf (difficulty));
+            } else if (difficulty != 0 && !(difficulty > 3)) {
+                settings.set_int ("difficulty", difficulty - 1);
+            }
+
             var win = this.active_window;
             if (win == null) {
                 win = new WindowPainter.Window (this);

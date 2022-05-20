@@ -45,7 +45,10 @@ namespace WindowPainter {
 
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/game-board.ui")]
     public class GameBoard : Gtk.Grid {
+        public Difficulty difficulty { get; set; }
         public Colours current_colour { get; set; }
+
+        private int num_rows_cols;
     
         public Gee.List<Square> squares { get; construct; }
         private Gee.List<int> flooded_indices;
@@ -71,7 +74,11 @@ namespace WindowPainter {
         }
         
         private void initialise () {
+            difficulty = (Difficulty) Application.settings.get_int ("difficulty");
+
             flooded_indices.clear ();
+
+            num_rows_cols = difficulty.get_num_rows_cols ();
         
             setup_ui ();
             
@@ -81,11 +88,11 @@ namespace WindowPainter {
         }
         
         private void setup_ui () {
-            for (int row = 0; row < 10; row++) {
-                for (int col = 0; col < 10; col++) {
+            for (int row = 0; row < num_rows_cols; row++) {
+                for (int col = 0; col < num_rows_cols; col++) {
                     int index = index_for_coord (row, col);
                     Square square;
-                    square = new Square (Colours.get_random (), 32);
+                    square = new Square (Colours.get_random (), difficulty.get_square_size ());
                     squares.insert (index, square);
                     this.attach (square, col, row);
                 }
@@ -119,8 +126,8 @@ namespace WindowPainter {
             do {
                 new_indices.clear ();
                 foreach (int index in flooded_indices) {
-                    int row = index / 10;
-                    int col = index % 10;
+                    int row = index / num_rows_cols;
+                    int col = index % num_rows_cols;
                     // Look up
                     int? north_neighbor_index = index_for_coord (row - 1, col);
                     if (should_flood_neighbor (north_neighbor_index)) {
@@ -144,7 +151,7 @@ namespace WindowPainter {
                 }
                 flooded_indices.add_all (new_indices);
             } while (new_indices.size > 0);
-            return flooded_indices.size == (10 * 10);
+            return flooded_indices.size == (num_rows_cols * num_rows_cols);
         }
 
         private bool should_flood_neighbor (int? neighbor_index) {
@@ -155,10 +162,10 @@ namespace WindowPainter {
          * Convert the (row,col) game board coordinates to an index in the squares list
          */
         private int? index_for_coord (int row, int col) {
-            if (row < 0 || row >= 10 || col < 0 || col >= 10) {
+            if (row < 0 || row >= num_rows_cols || col < 0 || col >= num_rows_cols) {
                 return null;
             }
-            return col + (row * 10);
+            return col + (row * num_rows_cols);
         }
     }
 }
