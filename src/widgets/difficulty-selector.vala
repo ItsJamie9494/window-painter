@@ -23,6 +23,11 @@ namespace WindowPainter {
         private unowned Gtk.ListBox listbox;
 
         [GtkCallback]
+        public void create_custom_board () {
+            print ("Hello World");
+        }
+
+        [GtkCallback]
         public void activate_row (Adw.ActionRow source) {
             var length = 0;
 
@@ -41,6 +46,12 @@ namespace WindowPainter {
 
         public DifficultySelector () {
             Object ();
+        }
+
+        construct {
+            listbox.row_selected.connect (() => {
+               listbox.unselect_all ();
+            });
         }
     }
 }

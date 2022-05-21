@@ -37,6 +37,13 @@
                             <signal name="activated" handler="activate_row" />
                         </object>
                     </child>
+                    <child>
+                        <object class="AdwActionRow">
+                            <property name="title">Custom</property>
+                            <property name="activatable">true</property>
+                            <signal name="activated" handler="create_custom_board" />
+                        </object>
+                    </child>
                 </object>
             </child>
         </object>
