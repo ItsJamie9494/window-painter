@@ -52,6 +52,7 @@ namespace WindowPainter {
             
             typeof (ColourSwitcher).ensure ();
             typeof (GameBoard).ensure ();
+            typeof (DifficultySelector).ensure ();
             
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("/dev/jamiethalacker/window_painter/colours.css");
@@ -64,17 +65,20 @@ namespace WindowPainter {
 
         public override void activate () {
             base.activate ();
-
-            if (difficulty > 3 || difficulty == 0 || difficulty < 0) {
-                warning ("Difficulty value %i does not exist.\nPermitted values: 1, 2, 3".printf (difficulty));
-            } else if (difficulty != 0 && !(difficulty > 3)  && !(difficulty < 0)) {
-                settings.set_int ("difficulty", difficulty - 1);
-            }
-
             var win = this.active_window;
             if (win == null) {
                 win = new WindowPainter.Window (this);
             }
+
+            if (difficulty > 3 || difficulty == 0 || difficulty < 0) {
+                warning ("Difficulty value %i does not exist.\nPermitted values: 1, 2, 3".printf (difficulty));
+            } else if (difficulty != 0 && !(difficulty > 3)  && !(difficulty < 0)) {
+                if (settings.set_int ("difficulty", difficulty - 1) == true) {
+                    Signals.get_default ().switch_stack ("gameboard");
+                    Signals.get_default ().new_game ();
+                }
+            }
+
             win.present ();
         }
 

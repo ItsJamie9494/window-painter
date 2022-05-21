@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="WindowPainterDifficultySelector" parent="AdwPreferencesPage">
+    <property name="halign">fill</property>
+    <property name="valign">center</property>
+    <property name="hexpand">true</property>
+    <property name="vexpand">true</property>
+    <property name="margin-top">8</property>
+    <property name="margin-bottom">8</property>
+    <child>
+        <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Select Difficulty</property>
+            <child>
+                <object class="GtkListBox" id="listbox">
+                    <style>
+                        <class name="boxed-list" />
+                    </style>
+                    <child>
+                        <object class="AdwActionRow">
+                            <property name="title">Easy</property>
+                            <property name="activatable">true</property>
+                            <signal name="activated" handler="activate_row" />
+                        </object>
+                    </child>
+                    <child>
+                        <object class="AdwActionRow">
+                            <property name="title">Normal</property>
+                            <property name="activatable">true</property>
+                            <signal name="activated" handler="activate_row" />
+                        </object>
+                    </child>
+                    <child>
+                        <object class="AdwActionRow">
+                            <property name="title">Hard</property>
+                            <property name="activatable">true</property>
+                            <signal name="activated" handler="activate_row" />
+                        </object>
+                    </child>
+                </object>
+            </child>
+        </object>
+    </child>
+  </template>
+</interface>

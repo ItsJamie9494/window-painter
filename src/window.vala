@@ -19,8 +19,15 @@
 namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/window.ui")]
     public class Window : Adw.ApplicationWindow {
+        [GtkChild]
+        private unowned Gtk.Stack stack;
+
         public Window (Gtk.Application app) {
             Object (application: app);
+
+            Signals.get_default ().switch_stack.connect ((stack_page) => {
+                stack.set_visible_child_name (stack_page);
+            });
         }
     }
 }

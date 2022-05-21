@@ -4,6 +4,7 @@ sources = [
   'utils.vala',
   'widgets/colour-switcher.vala',
   'widgets/game-board.vala',
+  'widgets/difficulty-selector.vala',
   'models/colours.vala',
   'models/difficulty.vala',
   'objects/signals.vala',

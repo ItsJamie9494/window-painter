@@ -64,7 +64,24 @@
                     </object>
                 </child>
                 <child>
-                    <object class="WindowPainterGameBoard"></object>
+                    <object class="GtkStack" id="stack">
+                        <child>
+                            <object class="GtkStackPage">
+                                <property name="name">difficulty</property>
+                                <property name="child">
+                                    <object class="WindowPainterDifficultySelector"></object>
+                                </property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkStackPage">
+                                <property name="name">gameboard</property>
+                                <property name="child">
+                                    <object class="WindowPainterGameBoard"></object>
+                                </property>
+                            </object>
+                        </child>
+                    </object>
                 </child>
                 <child>
                     <object class="WindowPainterColourSwitcher"></object>
