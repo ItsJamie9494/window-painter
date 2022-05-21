@@ -44,6 +44,7 @@ namespace WindowPainter {
 
         construct {
             Signals.get_default ().set_current_colour.connect ((colour) => {
+                this.set_sensitive (true);
                 var widget = this.get_first_child ();
                 for (var i = 0; i < 6; i++) {
                     if (widget != null) {
@@ -52,6 +53,14 @@ namespace WindowPainter {
                         }
                         widget = widget.get_next_sibling ();
                     }
+                }
+            });
+
+            Signals.get_default ().switch_stack.connect ((stack_page) => {
+                if (stack_page == "gameboard") {
+                    // do nothing
+                } else if (stack_page == "difficulty") {
+                    this.set_sensitive (false);
                 }
             });
         }

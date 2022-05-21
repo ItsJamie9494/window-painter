@@ -31,6 +31,7 @@ namespace WindowPainter {
         private const ActionEntry[] action_entries = {
             { "about", on_about_action },
             { "preferences", on_preferences_action },
+            { "new-game", on_new_game },
             { "quit", quit }
         };
 
@@ -98,6 +99,10 @@ namespace WindowPainter {
 
         private void on_preferences_action () {
             message ("app.preferences action activated");
+        }
+
+        private void on_new_game () {
+            Signals.get_default ().switch_stack ("difficulty");
         }
     }
 }
