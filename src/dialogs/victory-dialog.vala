@@ -26,12 +26,14 @@ namespace WindowPainter {
         construct {
             this.response.connect ((response_id)=> {
                 if (response_id == Gtk.ResponseType.OK) {
-                    Signals.get_default ().new_game ();
+                    Signals.get_default ().switch_stack ("difficulty");
                     this.close ();
                 }
 
                 if (response_id == Gtk.ResponseType.CANCEL) {
-                    this.close ();
+                    if (this.get_transient_for ().get_application () != null) {
+                        this.get_transient_for ().get_application ().quit ();
+                    }
                 }
             });
         }
