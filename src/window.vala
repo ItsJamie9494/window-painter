@@ -53,6 +53,7 @@ namespace WindowPainter {
 
             Application.settings.changed.connect ((key) => {
                 if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == true) {
+                    hide_moves_container ();
                     Signals.get_default ().new_game ();
                     var toast = new Adw.Toast (_("Infinite Mode Enabled!"));
                     toast.set_timeout (1);
