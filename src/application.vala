@@ -102,7 +102,7 @@ namespace WindowPainter {
                                    "website", "https://jamiethalacker.dev",
                                    "website-label", _("My Personal Website"),
                                    "license-type", Gtk.License.GPL_3_0,
-                                   "version", "1.0.0");
+                                   "version", "1.0.1");
         }
 
         private void on_new_game () {
