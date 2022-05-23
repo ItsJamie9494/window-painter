@@ -129,6 +129,15 @@ namespace WindowPainter {
                 dialog.present ();
                 return;
             }
+
+            if (moves_remaining == 0) {
+                Window.get_default ().hide_moves_container ();
+                var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
+                var dialog = new DefeatDialog ();
+                dialog.set_transient_for (win);
+                dialog.present ();
+                return;
+            }
         }
         
         // This is… not ideal… but it works!
