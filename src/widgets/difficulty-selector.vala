@@ -22,10 +22,10 @@ namespace WindowPainter {
         [GtkChild]
         private unowned Gtk.ListBox listbox;
 
-        [GtkCallback]
-        public void create_custom_board () {
-            print ("Hello World");
-        }
+        // [GtkCallback]
+        // public void create_custom_board () {
+        //     print ("Hello World");
+        // }
 
         [GtkCallback]
         public void activate_row (Adw.ActionRow source) {
