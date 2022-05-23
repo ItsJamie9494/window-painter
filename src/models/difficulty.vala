@@ -47,5 +47,19 @@ namespace WindowPainter {
                     assert_not_reached ();
             }
         }
+
+        public int get_move_limit () {
+            switch (this) {
+                case EASY:
+                    return 15;
+                case NORMAL:
+                    return 20;
+                case HARD:
+                    return 25;
+                default:
+                    assert_not_reached ();
+            }
+
+        }
     }
 }

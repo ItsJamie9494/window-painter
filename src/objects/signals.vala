@@ -30,5 +30,6 @@ public class Signals : GLib.Object {
     public signal void new_game ();
     public signal void set_current_colour (WindowPainter.Colours colour);
     public signal void do_button_click (WindowPainter.Colours colour);
+    public signal void update_move_count (int moves_remaining);
 }
 

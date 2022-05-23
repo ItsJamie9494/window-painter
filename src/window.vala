@@ -19,15 +19,39 @@
 namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/window.ui")]
     public class Window : Adw.ApplicationWindow {
+        private static Window _window;
+        public static unowned Window get_default () {
+            return _window;
+        }
+
         [GtkChild]
         private unowned Gtk.Stack stack;
+        [GtkChild]
+        private unowned Gtk.Box moves_remaining_container;
+        [GtkChild]
+        public unowned Gtk.Label moves_remaining_count;
 
         public Window (Gtk.Application app) {
             Object (application: app);
 
+            if (_window == null) {
+                _window = this;
+            }
+
             Signals.get_default ().switch_stack.connect ((stack_page) => {
                 stack.set_visible_child_name (stack_page);
             });
+
+            Signals.get_default ().update_move_count.connect ((moves_remaining) => {
+                if (moves_remaining_container.get_visible () != true) {
+                    moves_remaining_container.set_visible (true);
+                }
+                moves_remaining_count.set_label (moves_remaining.to_string ());
+            });
+        }
+
+        public void hide_moves_container () {
+            moves_remaining_container.set_visible (false);
         }
     }
 }

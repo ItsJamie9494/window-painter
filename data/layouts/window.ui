@@ -40,11 +40,12 @@
                     </object>
                 </child>
                 <child>
-                    <object class="GtkBox">
+                    <object class="GtkBox" id="moves_remaining_container">
                         <property name="hexpand">true</property>
                         <property name="halign">center</property>
                         <property name="valign">end</property>
                         <property name="spacing">8</property>
+                        <property name="visible">false</property>
                         <child>
                             <object class="GtkLabel">
                                 <property name="label" translatable="yes">Moves Remaining:</property>
@@ -54,7 +55,7 @@
                             </object>
                         </child>
                         <child>
-                            <object class="GtkLabel">
+                            <object class="GtkLabel" id="moves_remaining_count">
                                 <property name="label" translatable="yes">0</property>
                                 <style>
                                     <class name="title-3" />

@@ -18,21 +18,24 @@
                     </style>
                     <child>
                         <object class="AdwActionRow">
-                            <property name="title">Easy</property>
+                            <property name="title" translatable="yes">Easy</property>
+                            <property name="subtitle" translatable="yes">A 5x5 grid with 15 moves</property>
                             <property name="activatable">true</property>
                             <signal name="activated" handler="activate_row" />
                         </object>
                     </child>
                     <child>
                         <object class="AdwActionRow">
-                            <property name="title">Normal</property>
+                            <property name="title" translatable="yes">Normal</property>
+                            <property name="subtitle" translatable="yes">A 10x10 grid with 20 moves</property>
                             <property name="activatable">true</property>
                             <signal name="activated" handler="activate_row" />
                         </object>
                     </child>
                     <child>
                         <object class="AdwActionRow">
-                            <property name="title">Hard</property>
+                            <property name="title" translatable="yes">Hard</property>
+                            <property name="subtitle" translatable="yes">A 14x14 grid with 25 moves</property>
                             <property name="activatable">true</property>
                             <signal name="activated" handler="activate_row" />
                         </object>
@@ -40,6 +43,7 @@
                     <child>
                         <object class="AdwActionRow">
                             <property name="title">Custom</property>
+                            <property name="subtitle" translatable="yes">Pick your own grid size and move limits</property>
                             <property name="activatable">true</property>
                             <signal name="activated" handler="create_custom_board" />
                         </object>

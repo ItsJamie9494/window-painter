@@ -47,6 +47,7 @@ namespace WindowPainter {
     public class GameBoard : Gtk.Grid {
         public Difficulty difficulty { get; set; }
         public Colours current_colour { get; set; }
+        public int moves_remaining { get; set; }
 
         private int num_rows_cols;
     
@@ -79,6 +80,7 @@ namespace WindowPainter {
 
             flooded_indices.clear ();
 
+            moves_remaining = difficulty.get_move_limit ();
             num_rows_cols = difficulty.get_num_rows_cols ();
         
             setup_ui ();
@@ -86,6 +88,8 @@ namespace WindowPainter {
             current_colour = squares.get (0).colour;
             flooded_indices.add (0);
             update_flooded_indices ();
+
+            Signals.get_default ().update_move_count (moves_remaining);
         }
         
         private void setup_ui () {
@@ -108,12 +112,17 @@ namespace WindowPainter {
         }
         
         public void flood (Colours new_colour) {
+            // Count the move
+            moves_remaining--;
+            Signals.get_default ().update_move_count (moves_remaining);
+
             current_colour = new_colour;
             foreach (int index in flooded_indices) {
                 squares.get (index).reset_colour (new_colour);
             }
             
             if (update_flooded_indices ()) {
+                Window.get_default ().hide_moves_container ();
                 var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
                 var dialog = new VictoryDialog ();
                 dialog.set_transient_for (win);
