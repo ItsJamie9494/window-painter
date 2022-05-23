@@ -30,24 +30,13 @@
                         <property name="orientation">vertical</property>
                         <property name="halign">center</property>
                         <child>
-                            <object class="GtkRevealer">
-                                <property name="transition-type">slide-down</property>
-                                <property name="hexpand">true</property>
-                                <child>
-                                    <object class="GtkLabel">
-                                        <property name="halign">center</property>
-                                        <property name="label"></property>
-                                    </object>
-                                </child>
-                            </object>
-                        </child>
-                        <child>
                             <object class="GtkBox" id="moves_remaining_container">
                                 <property name="hexpand">true</property>
                                 <property name="halign">center</property>
                                 <property name="valign">end</property>
                                 <property name="spacing">8</property>
                                 <property name="visible">false</property>
+                                <property name="margin-top">8</property>
                                 <child>
                                     <object class="GtkLabel">
                                         <property name="label" translatable="yes">Moves Remaining:</property>
