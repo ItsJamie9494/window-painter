@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the window_painter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: window_painter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-23 02:10-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/dev.jamiethalacker.window_painter.desktop.in:3
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:6
+#: data/layouts/window.ui:7
+msgid "Window Painter"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:7
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:9
+#: src/application.vala:99
+msgid "Fill the board with the same colour of paint"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:16
+msgid "Main Game UI"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:22
+msgid "This is the very first release of Window Painter!"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:6
+msgid "The difficulty setting"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:7
+msgid "The difficulty setting. Possible Values: 0, 1, 2"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:11
+msgid "Toggle Infinite Mode"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:12
+msgid "Toggles Infinite Mode on or off"
+msgstr ""
+
+#: data/layouts/defeat-dialog.ui:6 data/layouts/defeat-dialog.ui:21
+msgid "You Lose"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:13
+msgid "Select Difficulty"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:21
+msgid "Easy"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:22
+msgid "A 5x5 grid with 15 moves"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:29
+msgid "Normal"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:30
+msgid "A 10x10 grid with 20 moves"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:37
+msgid "Hard"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:38
+msgid "A 14x14 grid with 25 moves"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:46
+msgid "Pick your own grid size and move limits"
+msgstr ""
+
+#: data/layouts/victory-dialog.ui:6
+msgid "You Win!"
+msgstr ""
+
+#: data/layouts/victory-dialog.ui:21
+msgid "🎉️ You Win!"
+msgstr ""
+
+#: data/layouts/window.ui:42
+msgid "Moves Remaining:"
+msgstr ""
+
+#: data/layouts/window.ui:50
+msgid "0"
+msgstr ""
+
+#: data/layouts/window.ui:92
+msgid "_New Game"
+msgstr ""
+
+#: data/layouts/window.ui:96
+msgid "_Infinite Mode"
+msgstr ""
+
+#: data/layouts/window.ui:100
+msgid "_About Window Painter"
+msgstr ""
+
+#: src/application.vala:100
+msgid "Made with <3 by Jamie Murphy"
+msgstr ""
+
+#: src/application.vala:103
+msgid "My Personal Website"
+msgstr ""
+
+#: src/window.vala:57
+msgid "Infinite Mode Enabled!"
+msgstr ""

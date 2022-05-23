@@ -96,13 +96,13 @@ namespace WindowPainter {
             Gtk.show_about_dialog (this.active_window,
                                    "program-name", "Window Painter",
                                    "authors", authors,
-                                   "comments", "Fill the board with the same colour of paint",
-                                   "copyright", "Made with <3 by Jamie Murphy",
+                                   "comments", _("Fill the board with the same colour of paint"),
+                                   "copyright", _("Made with <3 by Jamie Murphy"),
                                    "logo-icon-name", "dev.jamiethalacker.window_painter",
                                    "website", "https://jamiethalacker.dev",
-                                   "website-label", "My Personal Website",
+                                   "website-label", _("My Personal Website"),
                                    "license-type", Gtk.License.GPL_3_0,
-                                   "version", "0.1.0");
+                                   "version", "1.0.0");
         }
 
         private void on_new_game () {
