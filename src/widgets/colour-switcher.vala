@@ -21,12 +21,6 @@ namespace WindowPainter {
     public class ColourSwitcher : Gtk.Box {
         [GtkCallback]
         public void button_click (Gtk.Button source) {
-            for (var i = 0; i < 6; i++) {
-                if (source.get_style_context ().has_class (Colours.get_for_pos (i).get_style_class ())) {
-                    Signals.get_default ().do_button_click (Colours.get_for_pos (i));
-                }
-            }
-
             var widget = this.get_first_child ();
             for (var i = 0; i < 6; i++) {
                 if (widget != null) {
@@ -36,6 +30,12 @@ namespace WindowPainter {
             }
 
             source.set_sensitive (false);
+
+            for (var i = 0; i < 6; i++) {
+                if (source.get_style_context ().has_class (Colours.get_for_pos (i).get_style_class ())) {
+                    Signals.get_default ().do_button_click (Colours.get_for_pos (i));
+                }
+            }
         }
         
         public ColourSwitcher () {
@@ -50,6 +50,8 @@ namespace WindowPainter {
                     if (widget != null) {
                         if (widget.get_style_context ().has_class (colour.get_style_class ())) {
                             widget.set_sensitive (false);
+                        } else {
+                            widget.set_sensitive (true);
                         }
                         widget = widget.get_next_sibling ();
                     }

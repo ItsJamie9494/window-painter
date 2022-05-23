@@ -131,6 +131,7 @@ namespace WindowPainter {
                     return;
                 } else {
                     Signals.get_default ().new_game ();
+                    return;
                 }
             }
 
@@ -144,6 +145,7 @@ namespace WindowPainter {
                     return;
                 } else {
                     Signals.get_default ().new_game ();
+                    return;
                 }
             }
         }
