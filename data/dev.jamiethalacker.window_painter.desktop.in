@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Window Painter
 Exec=window-painter
-Icon=dev.jamiethalacker.window-painter
+Icon=dev.jamiethalacker.window_painter
 Terminal=false
 Type=Application
 Categories=GTK;
