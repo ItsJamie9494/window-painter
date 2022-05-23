@@ -4,7 +4,12 @@
 	  <key name="difficulty" type="i">
       <default>1</default>
       <summary>The difficulty setting</summary>
-      <description>The difficulty setting</description>
+      <description>The difficulty setting. Possible Values: 0, 1, 2</description>
+    </key>
+	  <key name="infinite-mode" type="b">
+      <default>false</default>
+      <summary>Toggle Infinite Mode</summary>
+      <description>Toggles Infinite Mode on or off</description>
     </key>
 	</schema>
 </schemalist>

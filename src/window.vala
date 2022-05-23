@@ -25,11 +25,13 @@ namespace WindowPainter {
         }
 
         [GtkChild]
+        private unowned Adw.ToastOverlay toast_overlay;
+        [GtkChild]
         private unowned Gtk.Stack stack;
         [GtkChild]
         private unowned Gtk.Box moves_remaining_container;
         [GtkChild]
-        public unowned Gtk.Label moves_remaining_count;
+        private unowned Gtk.Label moves_remaining_count;
 
         public Window (Gtk.Application app) {
             Object (application: app);
@@ -43,10 +45,22 @@ namespace WindowPainter {
             });
 
             Signals.get_default ().update_move_count.connect ((moves_remaining) => {
-                if (moves_remaining_container.get_visible () != true) {
+                if (moves_remaining_container.get_visible () != true && !Application.settings.get_boolean ("infinite-mode")) {
                     moves_remaining_container.set_visible (true);
                 }
                 moves_remaining_count.set_label (moves_remaining.to_string ());
+            });
+
+            Application.settings.changed.connect ((key) => {
+                if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == true) {
+                    Signals.get_default ().new_game ();
+                    var toast = new Adw.Toast ("Infinite Mode Enabled!");
+                    toast.set_timeout (1);
+                    toast_overlay.add_toast (toast);
+                }
+                if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == false) {
+                    Signals.get_default ().new_game ();
+                }
             });
         }
 

@@ -122,21 +122,29 @@ namespace WindowPainter {
             }
             
             if (update_flooded_indices ()) {
-                Window.get_default ().hide_moves_container ();
-                var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
-                var dialog = new VictoryDialog ();
-                dialog.set_transient_for (win);
-                dialog.present ();
-                return;
+                if (!Application.settings.get_boolean ("infinite-mode")) {
+                    Window.get_default ().hide_moves_container ();
+                    var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
+                    var dialog = new VictoryDialog ();
+                    dialog.set_transient_for (win);
+                    dialog.present ();
+                    return;
+                } else {
+                    Signals.get_default ().new_game ();
+                }
             }
 
             if (moves_remaining == 0) {
-                Window.get_default ().hide_moves_container ();
-                var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
-                var dialog = new DefeatDialog ();
-                dialog.set_transient_for (win);
-                dialog.present ();
-                return;
+                if (!Application.settings.get_boolean ("infinite-mode")) {
+                    Window.get_default ().hide_moves_container ();
+                    var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
+                    var dialog = new DefeatDialog ();
+                    dialog.set_transient_for (win);
+                    dialog.present ();
+                    return;
+                } else {
+                    Signals.get_default ().new_game ();
+                }
             }
         }
         

@@ -27,8 +27,10 @@ namespace WindowPainter {
         };
 
         public static int difficulty;
+        public static bool infinite_mode;
 
         private const ActionEntry[] action_entries = {
+            { "infinite-mode", null, null, "false", infinite_mode_toggle },
             { "about", on_about_action },
             { "preferences", on_preferences_action },
             { "new-game", on_new_game },
@@ -80,6 +82,13 @@ namespace WindowPainter {
                 }
             }
 
+            infinite_mode = settings.get_boolean ("infinite-mode");
+
+            // If Infinite Mode is set to false already, this will activate it lol
+            if (this.lookup_action ("infinite-mode") != null && infinite_mode != false) {
+                this.lookup_action ("infinite-mode").change_state (new Variant.boolean (infinite_mode));
+            }
+
             win.present ();
         }
 
@@ -103,6 +112,17 @@ namespace WindowPainter {
 
         private void on_new_game () {
             Signals.get_default ().switch_stack ("difficulty");
+        }
+
+        private void infinite_mode_toggle (SimpleAction action, Variant? parameter) {
+            if (!action.state.is_of_type (VariantType.BOOLEAN)) {
+                warning ("State is not boolean");
+            } else {
+                var state = action.state.get_boolean ();
+                infinite_mode = !state; // Set infinite mode to opposite of state
+                action.set_state (infinite_mode);
+                settings.set_boolean ("infinite-mode", infinite_mode);
+            }
         }
     }
 }
