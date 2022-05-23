@@ -97,14 +97,6 @@
         <attribute name="action">app.infinite-mode</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_Preferences</attribute>
-        <attribute name="action">app.preferences</attribute>
-      </item>
-      <item>
-        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
-        <attribute name="action">win.show-help-overlay</attribute>
-      </item>
-      <item>
         <attribute name="label" translatable="yes">_About Window Painter</attribute>
         <attribute name="action">app.about</attribute>
       </item>

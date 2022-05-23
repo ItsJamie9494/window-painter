@@ -32,7 +32,6 @@ namespace WindowPainter {
         private const ActionEntry[] action_entries = {
             { "infinite-mode", null, null, "false", infinite_mode_toggle },
             { "about", on_about_action },
-            { "preferences", on_preferences_action },
             { "new-game", on_new_game },
             { "quit", quit }
         };
@@ -104,10 +103,6 @@ namespace WindowPainter {
                                    "website-label", "My Personal Website",
                                    "license-type", Gtk.License.GPL_3_0,
                                    "version", "0.1.0");
-        }
-
-        private void on_preferences_action () {
-            message ("app.preferences action activated");
         }
 
         private void on_new_game () {
