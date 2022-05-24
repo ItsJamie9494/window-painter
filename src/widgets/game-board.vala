@@ -144,7 +144,6 @@ namespace WindowPainter {
                     dialog.present ();
                     return;
                 } else {
-                    Signals.get_default ().new_game ();
                     return;
                 }
             }
