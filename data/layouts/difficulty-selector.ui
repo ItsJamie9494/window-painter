@@ -66,15 +66,35 @@
                             <object class="AdwPreferencesGroup">
                                 <property name="title" translatable="yes">Create a Custom Board</property>
                                 <child>
-                                    <object class="GtkListBox" id="listbox234">
-                                        <style>
-                                            <class name="boxed-list" />
-                                        </style>
+                                    <object class="GtkBox">
+                                        <property name="spacing">12</property>
+                                        <property name="orientation">vertical</property>
                                         <child>
-                                            <object class="AdwEntryRow">
-                                                <property name="title" translatable="yes">Row and Column Count</property>
-                                                <property name="activatable">true</property>
-                                                <signal name="activated" handler="activate_row" />
+                                            <object class="GtkEntry" id="rowcol_count">
+                                                <property name="placeholder-text" translatable="yes">Row and Column Count</property>
+                                                <property name="input-purpose">digits</property>
+                                                <property name="max-length">2</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkEntry" id="move_count">
+                                                <property name="placeholder-text" translatable="yes">Moves Count (optional)</property>
+                                                <property name="input-purpose">digits</property>
+                                                <property name="max-length">20</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkListBox" id="custom_listbox">
+                                                <style>
+                                                    <class name="boxed-list" />
+                                                </style>
+                                                <child>
+                                                    <object class="AdwActionRow">
+                                                        <property name="title">Save</property>
+                                                        <property name="activatable">true</property>
+                                                        <signal name="activated" handler="save_custom_board" />
+                                                    </object>
+                                                </child>
                                             </object>
                                         </child>
                                     </object>
