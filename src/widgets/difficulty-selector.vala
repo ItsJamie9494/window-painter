@@ -50,10 +50,17 @@ namespace WindowPainter {
             Application.settings.set_int ("difficulty", 3);
 
             var rowcol = rowcol_count.get_buffer ().get_text ();
+            if (rowcol.length == 0) {
+                rowcol_count.get_style_context ().add_class ("error");
+                return;
+            }
             Application.settings.set_int ("custom-difficulty-rows-cols", int.parse(rowcol));
 
             if (!is_infinite_mode) {
                 var moves = move_count.get_buffer ().get_text ();
+                if (moves.length == 0) {
+                    moves = Difficulty.HARD.get_move_limit ().to_string ();
+                }
                 Application.settings.set_int ("custom-difficulty-moves", int.parse(moves));
             }
 
