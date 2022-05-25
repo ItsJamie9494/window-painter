@@ -10,6 +10,7 @@
 	</description>
   <url type="homepage">https://jamiethalacker.dev</url>
   <url type="bugtracker">https://github.com/ItsJamie9494/window-painter/issues</url>
+  <developer_name>Jamie Murphy</developer_name>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/ItsJamie9494/window-painter/main/data/screenshot.png</image>
@@ -17,12 +18,26 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2022-05-24" version="1.1.0" type="stable">
+      <description>
+        <p>Release 1.1 of Window Painter</p>
+        <ul>
+          <li>Add Italian Translation</li>
+          <li>Add Custom Games</li>
+          <li>Fix Bugs</li>
+        </ul>
+      </description>
+    </release>
     <release date="2022-05-23" version="1.0.0" type="stable">
       <description>
         <p>This is the very first release of Window Painter!</p>
       </description>
     </release>
   </releases>
+  <categories>
+    <category>Game</category>
+    <category>ArcadeGame</category>
+  </categories>
   <content_rating type="oars-1.0">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
