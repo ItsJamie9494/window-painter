@@ -69,6 +69,7 @@ namespace WindowPainter {
             });
 
             Signals.get_default ().new_game.connect (() => {
+                State.get_default ().is_game_active = true;
                 dispose_ui ();
                 initialise ();
                 Signals.get_default ().set_current_colour (current_colour);
@@ -128,6 +129,7 @@ namespace WindowPainter {
                     var dialog = new VictoryDialog ();
                     dialog.set_transient_for (win);
                     dialog.present ();
+                    State.get_default ().is_game_active = true;
                     return;
                 } else {
                     Signals.get_default ().new_game ();
@@ -142,6 +144,7 @@ namespace WindowPainter {
                     var dialog = new DefeatDialog ();
                     dialog.set_transient_for (win);
                     dialog.present ();
+                    State.get_default ().is_game_active = false;
                     return;
                 } else {
                     return;

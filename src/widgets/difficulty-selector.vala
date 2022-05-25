@@ -50,7 +50,7 @@ namespace WindowPainter {
             Application.settings.set_int ("difficulty", 3);
 
             var rowcol = rowcol_count.get_buffer ().get_text ();
-            if (rowcol.length == 0) {
+            if (rowcol.length == 0 || int.parse(rowcol) >= 20) {
                 rowcol_count.get_style_context ().add_class ("error");
                 return;
             }
@@ -66,6 +66,7 @@ namespace WindowPainter {
 
             Signals.get_default ().new_game ();
             Signals.get_default ().switch_stack ("gameboard");
+            stack.set_visible_child_name ("main");
         }
 
         [GtkCallback]
@@ -93,6 +94,15 @@ namespace WindowPainter {
         construct {
             listbox.row_selected.connect (() => {
                listbox.unselect_all ();
+            });
+
+            Application.settings.changed.connect ((key) => {
+                if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == true) {
+                    move_count.set_visible (false);
+                }
+                if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == false) {
+                    move_count.set_visible (true);
+                }
             });
         }
     }

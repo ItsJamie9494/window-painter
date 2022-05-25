@@ -8,6 +8,7 @@ sources = [
   'models/colours.vala',
   'models/difficulty.vala',
   'objects/signals.vala',
+  'objects/state.vala',
   'dialogs/victory-dialog.vala',
   'dialogs/defeat-dialog.vala'
 ]
