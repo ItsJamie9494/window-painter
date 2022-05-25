@@ -1,7 +1,7 @@
 project(
   'window_painter',
   ['c', 'vala'],
-  version: '1.0.1',
+  version: '1.1.0',
   meson_version: '>= 0.59.0',
   default_options: [
     'warning_level=2',
@@ -22,6 +22,10 @@ asresources = gnome.compile_resources(
 	c_name: 'as'
 )
 
+conf = configuration_data()
+conf.set_quoted('VERSION', meson.project_version())
+conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 
 subdir('data')
 subdir('src')

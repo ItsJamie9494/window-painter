@@ -42,6 +42,12 @@ namespace WindowPainter {
 
         construct {
             settings = new GLib.Settings ("dev.jamiethalacker.window_painter");
+
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.textdomain (Config.GETTEXT_PACKAGE);
+            Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
+            Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
+
             this.add_main_option_entries (options);
             this.add_action_entries (action_entries, this);
             this.set_accels_for_action ("app.quit", {"<primary>q"});
@@ -93,6 +99,7 @@ namespace WindowPainter {
 
         private void on_about_action () {
             string[] authors = { "Jamie Murphy" };
+            string translators = "albanobattistella https://github.com/albanobattistella";
             Gtk.show_about_dialog (this.active_window,
                                    "program-name", "Window Painter",
                                    "authors", authors,
@@ -102,7 +109,8 @@ namespace WindowPainter {
                                    "website", "https://jamiethalacker.dev",
                                    "website-label", _("My Personal Website"),
                                    "license-type", Gtk.License.GPL_3_0,
-                                   "version", "1.0.1");
+                                   "version", Config.VERSION,
+                                   "translator-credits", translators);
         }
 
         private void on_new_game () {

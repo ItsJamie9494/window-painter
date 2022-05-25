@@ -19,11 +19,18 @@ deps = [
   dependency('gee-0.8'),
 ]
 
+config_file = configure_file(
+    input: 'config.vala.in',
+    output: 'config.vala',
+    configuration: conf
+)
+
 gnome = import('gnome')
 
 executable(
   'window_painter',
   sources,
+  config_file,
   asresources,
   vala_args: '--target-glib=2.50',
   dependencies: deps,
