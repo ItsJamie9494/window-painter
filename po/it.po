@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: window_painter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 02:10-0700\n"
+"POT-Creation-Date: 2022-05-24 23:07-0700\n"
 "PO-Revision-Date: 2022-05-24 20:30+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -24,15 +24,37 @@ msgstr "Window Painter"
 
 #: data/dev.jamiethalacker.window_painter.appdata.xml.in:7
 #: data/dev.jamiethalacker.window_painter.appdata.xml.in:9
-#: src/application.vala:99
+#: src/application.vala:106
 msgid "Fill the board with the same colour of paint"
 msgstr "Riempi la tavola con lo stesso colore di vernice"
 
-#: data/dev.jamiethalacker.window_painter.appdata.xml.in:16
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:13
+#, fuzzy
+msgid "Jamie Murphy"
+msgstr "Fatto con <3 di Jamie Murphy"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:17
 msgid "Main Game UI"
 msgstr "Interfaccia utente del gioco principale"
 
-#: data/dev.jamiethalacker.window_painter.appdata.xml.in:22
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:23
+#, fuzzy
+msgid "Release 1.1 of Window Painter"
+msgstr "Window Painter"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:25
+msgid "Add Italian Translation"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:26
+msgid "Add Custom Games"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:27
+msgid "Fix Bugs"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:33
 msgid "This is the very first release of Window Painter!"
 msgstr "Questa è la prima versione di Window Painter!"
 
@@ -41,7 +63,8 @@ msgid "The difficulty setting"
 msgstr "L'impostazione della difficoltà"
 
 #: data/dev.jamiethalacker.window_painter.gschema.xml:7
-msgid "The difficulty setting. Possible Values: 0, 1, 2"
+#, fuzzy
+msgid "The difficulty setting. Possible Values: 0, 1, 2, 3"
 msgstr "L'impostazione della difficoltà. Valori possibili: 0, 1, 2"
 
 #: data/dev.jamiethalacker.window_painter.gschema.xml:11
@@ -52,41 +75,69 @@ msgstr "Attiva la modalità infinita"
 msgid "Toggles Infinite Mode on or off"
 msgstr "Attiva o disattiva la modalità infinita"
 
+#: data/dev.jamiethalacker.window_painter.gschema.xml:16
+msgid "Number of Rows and Columns"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:17
+msgid "Number of Rows and Columns in a custom game"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:21
+msgid "Number of Moves"
+msgstr ""
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:22
+msgid "Number of Moves in a custom game"
+msgstr ""
+
 #: data/layouts/defeat-dialog.ui:6 data/layouts/defeat-dialog.ui:21
 msgid "You Lose"
 msgstr "Hai perso"
 
-#: data/layouts/difficulty-selector.ui:13
+#: data/layouts/difficulty-selector.ui:18
 msgid "Select Difficulty"
 msgstr "Seleziona Difficoltà"
 
-#: data/layouts/difficulty-selector.ui:21
+#: data/layouts/difficulty-selector.ui:26
 msgid "Easy"
 msgstr "Facile"
 
-#: data/layouts/difficulty-selector.ui:22
+#: data/layouts/difficulty-selector.ui:27
 msgid "A 5x5 grid with 15 moves"
 msgstr "Una griglia 5x5 con 15 mosse"
 
-#: data/layouts/difficulty-selector.ui:29
+#: data/layouts/difficulty-selector.ui:34
 msgid "Normal"
 msgstr "Normale"
 
-#: data/layouts/difficulty-selector.ui:30
+#: data/layouts/difficulty-selector.ui:35
 msgid "A 10x10 grid with 20 moves"
 msgstr "Una griglia 10x10 con 20 mosse"
 
-#: data/layouts/difficulty-selector.ui:37
+#: data/layouts/difficulty-selector.ui:42
 msgid "Hard"
 msgstr "Difficile"
 
-#: data/layouts/difficulty-selector.ui:38
+#: data/layouts/difficulty-selector.ui:43
 msgid "A 14x14 grid with 25 moves"
 msgstr "Una griglia 14x14 con 25 mosse"
 
-#: data/layouts/difficulty-selector.ui:46
+#: data/layouts/difficulty-selector.ui:51
 msgid "Pick your own grid size and move limits"
 msgstr "Scegli la dimensione della griglia e sposta i limiti"
+
+#: data/layouts/difficulty-selector.ui:67
+msgid "Create a Custom Board"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:74
+msgid "Row and Column Count"
+msgstr ""
+
+#: data/layouts/difficulty-selector.ui:81
+msgid "Moves Count (optional)"
+msgstr ""
 
 #: data/layouts/victory-dialog.ui:6
 msgid "You Win!"
@@ -116,14 +167,14 @@ msgstr "_Modalità infinita"
 msgid "_About Window Painter"
 msgstr "_Informazioni su Window Painter"
 
-#: src/application.vala:100
+#: src/application.vala:107
 msgid "Made with <3 by Jamie Murphy"
 msgstr "Fatto con <3 di Jamie Murphy"
 
-#: src/application.vala:103
+#: src/application.vala:110
 msgid "My Personal Website"
 msgstr "Il mio sito web personale"
 
-#: src/window.vala:57
+#: src/window.vala:60
 msgid "Infinite Mode Enabled!"
 msgstr "Modalità infinita abilitata!"
