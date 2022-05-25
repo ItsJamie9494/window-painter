@@ -17,10 +17,19 @@
  */
 
 namespace WindowPainter {
+    public int num_rows_cols_custom = 0;
+    public int move_limit_custom = 0;
+
     public enum Difficulty {
         EASY,
         NORMAL,
-        HARD;
+        HARD,
+        CUSTOM;
+
+        public void set_custom (int num_rows_cols, int move_limit) {
+            move_limit_custom = move_limit;
+            num_rows_cols_custom = num_rows_cols;
+        }
 
         public int get_num_rows_cols () {
             switch (this) {
@@ -30,6 +39,8 @@ namespace WindowPainter {
                     return 10;
                 case HARD:
                     return 14;
+                case CUSTOM:
+                    return num_rows_cols_custom;
                 default:
                     assert_not_reached ();
             }
@@ -42,6 +53,9 @@ namespace WindowPainter {
                 case NORMAL:
                     return 49;
                 case HARD:
+                    return 35;
+                case CUSTOM:
+                    // TODO write an algorithm for this?
                     return 35;
                 default:
                     assert_not_reached ();
@@ -56,6 +70,8 @@ namespace WindowPainter {
                     return 20;
                 case HARD:
                     return 25;
+                case CUSTOM:
+                    return move_limit_custom;
                 default:
                     assert_not_reached ();
             }

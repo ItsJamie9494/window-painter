@@ -20,12 +20,14 @@ namespace WindowPainter {
     [GtkTemplate (ui = "/dev/jamiethalacker/window_painter/difficulty-selector.ui")]
     public class DifficultySelector : Adw.PreferencesPage {
         [GtkChild]
+        private unowned Gtk.Stack stack;
+        [GtkChild]
         private unowned Gtk.ListBox listbox;
 
-        // [GtkCallback]
-        // public void create_custom_board () {
-        //     print ("Hello World");
-        // }
+        [GtkCallback]
+        public void create_custom_board () {
+            stack.set_visible_child_name ("custom");
+        }
 
         [GtkCallback]
         public void activate_row (Adw.ActionRow source) {
@@ -46,6 +48,7 @@ namespace WindowPainter {
 
         public DifficultySelector () {
             Object ();
+            stack.set_visible_child_name ("main");
         }
 
         construct {
