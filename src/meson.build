@@ -28,7 +28,7 @@ config_file = configure_file(
 gnome = import('gnome')
 
 executable(
-  'window_painter',
+  'windowpainter',
   sources,
   config_file,
   asresources,

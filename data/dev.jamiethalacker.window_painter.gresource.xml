@@ -7,6 +7,6 @@
     <file alias="victory-dialog.ui">layouts/victory-dialog.ui</file>
     <file alias="defeat-dialog.ui">layouts/defeat-dialog.ui</file>
     <file alias="difficulty-selector.ui">layouts/difficulty-selector.ui</file>
-    <file alias="colours.css">styles/colours.css</file>
+    <file>style.css</file>
   </gresource>
 </gresources>

@@ -51,7 +51,7 @@ namespace WindowPainter {
 
             var rowcol = rowcol_count.get_buffer ().get_text ();
             if (rowcol.length == 0 || int.parse(rowcol) >= 20) {
-                rowcol_count.get_style_context ().add_class ("error");
+                rowcol_count.add_css_class ("error");
                 return;
             }
             Application.settings.set_int ("custom-difficulty-rows-cols", int.parse(rowcol));

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Window Painter
-Exec=window_painter
+Exec=windowpainter
 Icon=dev.jamiethalacker.window_painter
 Terminal=false
 Type=Application

@@ -23,10 +23,10 @@ namespace WindowPainter {
         
         public void reset_colour (Colours colour) {
             for (var i = 0; i < 6; i++) {
-                this.get_style_context ().remove_class (Colours.get_for_pos (i).get_style_class ());
+                this.remove_css_class (Colours.get_for_pos (i).get_style_class ());
             }
             
-            this.get_style_context ().add_class (colour.get_style_class ());
+            this.add_css_class (colour.get_style_class ());
             
         }
     
@@ -39,7 +39,7 @@ namespace WindowPainter {
         
         construct {
             set_size_request (size, size);
-            this.get_style_context ().add_class (colour.get_style_class ());
+            this.add_css_class (colour.get_style_class ());
         }
     }
 

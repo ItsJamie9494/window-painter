@@ -61,14 +61,6 @@ namespace WindowPainter {
             typeof (ColourSwitcher).ensure ();
             typeof (GameBoard).ensure ();
             typeof (DifficultySelector).ensure ();
-            
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("/dev/jamiethalacker/window_painter/colours.css");
-            Gtk.StyleContext.add_provider_for_display (
-                Gdk.Display.get_default (),
-                provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
         }
 
         public override void activate () {
@@ -106,8 +98,6 @@ namespace WindowPainter {
                                    "comments", _("Fill the board with the same colour of paint"),
                                    "copyright", _("Made with <3 by Jamie Murphy"),
                                    "logo-icon-name", "dev.jamiethalacker.window_painter",
-                                   "website", "https://jamiethalacker.dev",
-                                   "website-label", _("My Personal Website"),
                                    "license-type", Gtk.License.GPL_3_0,
                                    "version", Config.VERSION,
                                    "translator-credits", translators);

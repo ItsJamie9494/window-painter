@@ -32,7 +32,7 @@ namespace WindowPainter {
             source.set_sensitive (false);
 
             for (var i = 0; i < 6; i++) {
-                if (source.get_style_context ().has_class (Colours.get_for_pos (i).get_style_class ())) {
+                if (source.has_css_class (Colours.get_for_pos (i).get_style_class ())) {
                     Signals.get_default ().do_button_click (Colours.get_for_pos (i));
                 }
             }
@@ -48,7 +48,7 @@ namespace WindowPainter {
                 var widget = this.get_first_child ();
                 for (var i = 0; i < 6; i++) {
                     if (widget != null) {
-                        if (widget.get_style_context ().has_class (colour.get_style_class ())) {
+                        if (widget.has_css_class (colour.get_style_class ())) {
                             widget.set_sensitive (false);
                         } else {
                             widget.set_sensitive (true);
