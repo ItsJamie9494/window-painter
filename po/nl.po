@@ -1,0 +1,178 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the window_painter package.
+#
+# Heimen Stoffels <vistausss@fastmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: window_painter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-24 23:07-0700\n"
+"PO-Revision-Date: 2023-04-21 14:24+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: data/dev.jamiethalacker.window_painter.desktop.in:3
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:6
+#: data/layouts/window.ui:7
+msgid "Window Painter"
+msgstr "Window Painter"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:7
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:9
+#: src/application.vala:106
+msgid "Fill the board with the same colour of paint"
+msgstr "Vul het bord met dezelfde kleur verf"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:13
+msgid "Jamie Murphy"
+msgstr "Jamie Murphy"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:17
+msgid "Main Game UI"
+msgstr "Het spel zelf"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:23
+msgid "Release 1.1 of Window Painter"
+msgstr "Versie 1.1 van Window Painter"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:25
+msgid "Add Italian Translation"
+msgstr "Nieuw: Italiaanse vertaling"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:26
+msgid "Add Custom Games"
+msgstr "Nieuw: voeg eigen spellen toe"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:27
+msgid "Fix Bugs"
+msgstr "Opgelost: bugs"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:33
+msgid "This is the very first release of Window Painter!"
+msgstr "Dit is de allereerste versie van Window Painter!"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:6
+msgid "The difficulty setting"
+msgstr "De moeilijkheidsgraad"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:7
+msgid "The difficulty setting. Possible Values: 0, 1, 2, 3"
+msgstr "De moeilijkheidsgraad: 0, 1, 2, 3"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:11
+msgid "Toggle Infinite Mode"
+msgstr "Oneindige modus aan/uit"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:12
+msgid "Toggles Infinite Mode on or off"
+msgstr "Schakel de oneindige modus in/uit"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:16
+msgid "Number of Rows and Columns"
+msgstr "Aantal rijen en kolommen"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:17
+msgid "Number of Rows and Columns in a custom game"
+msgstr "Het aantal rijen en kolommen in een eigen spel"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:21
+msgid "Number of Moves"
+msgstr "Aantal zetten"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:22
+msgid "Number of Moves in a custom game"
+msgstr "Het aantal zetten in een eigen spel"
+
+#: data/layouts/defeat-dialog.ui:6 data/layouts/defeat-dialog.ui:21
+msgid "You Lose"
+msgstr "U heeft verloren!"
+
+#: data/layouts/difficulty-selector.ui:18
+msgid "Select Difficulty"
+msgstr "Kies een moeilijkheidsgraad"
+
+#: data/layouts/difficulty-selector.ui:26
+msgid "Easy"
+msgstr "Makkelijk"
+
+#: data/layouts/difficulty-selector.ui:27
+msgid "A 5x5 grid with 15 moves"
+msgstr "Een 5x5-rooster met 15 zetten"
+
+#: data/layouts/difficulty-selector.ui:34
+msgid "Normal"
+msgstr "Normaal"
+
+#: data/layouts/difficulty-selector.ui:35
+msgid "A 10x10 grid with 20 moves"
+msgstr "Een 10x10-rooster met 20 zetten"
+
+#: data/layouts/difficulty-selector.ui:42
+msgid "Hard"
+msgstr "Moeilijk"
+
+#: data/layouts/difficulty-selector.ui:43
+msgid "A 14x14 grid with 25 moves"
+msgstr "Een 14x14-rooster met 25 zetten"
+
+#: data/layouts/difficulty-selector.ui:51
+msgid "Pick your own grid size and move limits"
+msgstr "Bepaal zelf de roosterafmetingen en het aantal zetten"
+
+#: data/layouts/difficulty-selector.ui:67
+msgid "Create a Custom Board"
+msgstr "Eigen bord samenstellen"
+
+#: data/layouts/difficulty-selector.ui:74
+msgid "Row and Column Count"
+msgstr "Aantal rijen en kolommen"
+
+#: data/layouts/difficulty-selector.ui:81
+msgid "Moves Count (optional)"
+msgstr "Aantal zetten (optioneel)"
+
+#: data/layouts/victory-dialog.ui:6
+msgid "You Win!"
+msgstr "U heeft gewonnen!"
+
+#: data/layouts/victory-dialog.ui:21
+msgid "🎉️ You Win!"
+msgstr "🎉️ U heeft gewonnen!"
+
+#: data/layouts/window.ui:42
+msgid "Moves Remaining:"
+msgstr "Aantal resterende zetten:"
+
+#: data/layouts/window.ui:50
+msgid "0"
+msgstr "0"
+
+#: data/layouts/window.ui:92
+msgid "_New Game"
+msgstr "_Nieuw spel"
+
+#: data/layouts/window.ui:96
+msgid "_Infinite Mode"
+msgstr "One_indige modus"
+
+#: data/layouts/window.ui:100
+msgid "_About Window Painter"
+msgstr "Over Window P_ainter"
+
+#: src/application.vala:107
+msgid "Made with <3 by Jamie Murphy"
+msgstr "Met <3 gemaakt door Jamie Murphy"
+
+#: src/application.vala:110
+msgid "My Personal Website"
+msgstr "Mijn eigen website"
+
+#: src/window.vala:60
+msgid "Infinite Mode Enabled!"
+msgstr "De oneindige modus is ingeschakeld!"
