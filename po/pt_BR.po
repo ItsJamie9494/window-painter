@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the window_painter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Filipe Motta <luizfilipemotta@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: window_painter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-24 23:07-0700\n"
+"PO-Revision-Date: 2024-03-10 17:01-0300\n"
+"Last-Translator: Filipe Motta <luizfilipemotta@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 45.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: data/dev.jamiethalacker.window_painter.desktop.in:3
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:6
+#: data/layouts/window.ui:7
+msgid "Window Painter"
+msgstr "Window Painter"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:7
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:9
+#: src/application.vala:106
+msgid "Fill the board with the same colour of paint"
+msgstr "Preencha o quadro com a mesma cor de tinta"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:13
+msgid "Jamie Murphy"
+msgstr "Jamie Murphy"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:17
+msgid "Main Game UI"
+msgstr "Interface Principal do Jogo"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:23
+msgid "Release 1.1 of Window Painter"
+msgstr "Versão 1.1 do Window Painter"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:25
+msgid "Add Italian Translation"
+msgstr "Adicionada tradução para o italiano"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:26
+msgid "Add Custom Games"
+msgstr "Adicionados jogos personalizados"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:27
+msgid "Fix Bugs"
+msgstr "Correção de problemas"
+
+#: data/dev.jamiethalacker.window_painter.appdata.xml.in:33
+msgid "This is the very first release of Window Painter!"
+msgstr "Esta é a primeira versão lançada do Window Painter!"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:6
+msgid "The difficulty setting"
+msgstr "Configuração de Dificuldade"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:7
+msgid "The difficulty setting. Possible Values: 0, 1, 2, 3"
+msgstr "A configuração de dificuldade. Valores possíveis: 0, 1, 2, 3"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:11
+msgid "Toggle Infinite Mode"
+msgstr "Ativar/Desativar Modo Infinito"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:12
+msgid "Toggles Infinite Mode on or off"
+msgstr "Ativa ou desativa o Modo Infinito"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:16
+msgid "Number of Rows and Columns"
+msgstr "Número de Linhas e Colunas"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:17
+msgid "Number of Rows and Columns in a custom game"
+msgstr "Número de linhas e colunas em um jogo personalizado"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:21
+msgid "Number of Moves"
+msgstr "Número de Movimentos"
+
+#: data/dev.jamiethalacker.window_painter.gschema.xml:22
+msgid "Number of Moves in a custom game"
+msgstr "Número de movimentos em um jogo personalizado"
+
+#: data/layouts/defeat-dialog.ui:6 data/layouts/defeat-dialog.ui:21
+msgid "You Lose"
+msgstr "Você perdeu"
+
+#: data/layouts/difficulty-selector.ui:18
+msgid "Select Difficulty"
+msgstr "Escolha a dificuldade"
+
+#: data/layouts/difficulty-selector.ui:26
+msgid "Easy"
+msgstr "Fácil"
+
+#: data/layouts/difficulty-selector.ui:27
+msgid "A 5x5 grid with 15 moves"
+msgstr "Grade 5x5 com 15 movimentos"
+
+#: data/layouts/difficulty-selector.ui:34
+msgid "Normal"
+msgstr "Normal"
+
+#: data/layouts/difficulty-selector.ui:35
+msgid "A 10x10 grid with 20 moves"
+msgstr "Grade 10x10 com 20 movimentos"
+
+#: data/layouts/difficulty-selector.ui:42
+msgid "Hard"
+msgstr "Difícil"
+
+#: data/layouts/difficulty-selector.ui:43
+msgid "A 14x14 grid with 25 moves"
+msgstr "Grade 14x14 com 25 movimentos"
+
+#: data/layouts/difficulty-selector.ui:51
+msgid "Pick your own grid size and move limits"
+msgstr "Escolha seu próprio tamanho de grade e limite de movimentos"
+
+#: data/layouts/difficulty-selector.ui:67
+msgid "Create a Custom Board"
+msgstr "Crie um quadro personalizado"
+
+#: data/layouts/difficulty-selector.ui:74
+msgid "Row and Column Count"
+msgstr "Número de linhas e colunas"
+
+#: data/layouts/difficulty-selector.ui:81
+msgid "Moves Count (optional)"
+msgstr "Número de movimentos (opcional)"
+
+#: data/layouts/victory-dialog.ui:6
+msgid "You Win!"
+msgstr "Você venceu!"
+
+#: data/layouts/victory-dialog.ui:21
+msgid "🎉️ You Win!"
+msgstr "🎉️ Você venceu!"
+
+#: data/layouts/window.ui:42
+msgid "Moves Remaining:"
+msgstr "Movimentos restantes:"
+
+#: data/layouts/window.ui:50
+msgid "0"
+msgstr "0"
+
+#: data/layouts/window.ui:92
+msgid "_New Game"
+msgstr "_Novo jogo"
+
+#: data/layouts/window.ui:96
+msgid "_Infinite Mode"
+msgstr "Modo _Infinito"
+
+#: data/layouts/window.ui:100
+msgid "_About Window Painter"
+msgstr "_Sobre o Window Painter"
+
+#: src/application.vala:107
+msgid "Made with <3 by Jamie Murphy"
+msgstr "Feito com <3 por Jamie Murphy"
+
+#: src/application.vala:110
+msgid "My Personal Website"
+msgstr "Minha página web pessoal"
+
+#: src/window.vala:60
+msgid "Infinite Mode Enabled!"
+msgstr "Modo Infinito ativado!"
