@@ -33,7 +33,7 @@ namespace WindowPainter {
         [GtkChild]
         private unowned Gtk.Label moves_remaining_count;
 
-        public Window (Gtk.Application app) {
+        public Window (Application app) {
             Object (application: app);
 
             if (_window == null) {
@@ -53,7 +53,7 @@ namespace WindowPainter {
 
             Application.settings.changed.connect ((key) => {
                 if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == true) {
-                    if (State.get_default ().is_game_active == true) {
+                    if (app.game_active == true) {
                         hide_moves_container ();
                         Signals.get_default ().new_game ();
                     }
@@ -62,7 +62,7 @@ namespace WindowPainter {
                     toast_overlay.add_toast (toast);
                 }
                 if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == false) {
-                    if (State.get_default ().is_game_active == true) {
+                    if (app.game_active == true) {
                         Signals.get_default ().new_game ();
                     }
                 }

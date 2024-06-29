@@ -26,6 +26,8 @@ namespace WindowPainter {
             { null }
         };
 
+        public bool game_active;
+        
         public static int difficulty;
         public static bool infinite_mode;
 

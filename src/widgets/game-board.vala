@@ -69,7 +69,9 @@ namespace WindowPainter {
             });
 
             Signals.get_default ().new_game.connect (() => {
-                State.get_default ().is_game_active = true;
+                Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
+
+                app.game_active = true;
                 dispose_ui ();
                 initialise ();
                 Signals.get_default ().set_current_colour (current_colour);
@@ -113,6 +115,8 @@ namespace WindowPainter {
         }
         
         public void flood (Colours new_colour) {
+            Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
+
             // Count the move
             moves_remaining--;
             Signals.get_default ().update_move_count (moves_remaining);
@@ -129,7 +133,7 @@ namespace WindowPainter {
                     var dialog = new VictoryDialog ();
                     dialog.set_transient_for (win);
                     dialog.present ();
-                    State.get_default ().is_game_active = true;
+                    app.game_active = true;
                     return;
                 } else {
                     Signals.get_default ().new_game ();
@@ -144,7 +148,7 @@ namespace WindowPainter {
                     var dialog = new DefeatDialog ();
                     dialog.set_transient_for (win);
                     dialog.present ();
-                    State.get_default ().is_game_active = false;
+                    app.game_active = false;
                     return;
                 } else {
                     return;
