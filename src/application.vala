@@ -1,6 +1,6 @@
 /* application.vala
  *
- * Copyright 2022 Jamie Murphy
+ * Copyright 2022-2024 Jamie Murphy
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,17 +90,17 @@ namespace WindowPainter {
         }
 
         private void on_about_action () {
-            string[] authors = { "Jamie Murphy" };
-            string translators = "albanobattistella https://github.com/albanobattistella";
-            Gtk.show_about_dialog (this.active_window,
-                                   "program-name", "Window Painter",
-                                   "authors", authors,
-                                   "comments", _("Fill the board with the same colour of paint"),
-                                   "copyright", _("Made with <3 by Jamie Murphy"),
-                                   "logo-icon-name", "dev.jamiethalacker.window_painter",
-                                   "license-type", Gtk.License.GPL_3_0,
+            string[] developers = { "Jamie Murphy <jmurphy@gnome.org>" };
+
+            Adw.show_about_dialog (this.active_window,
+                                   "application-name", _("Window Painter"),
+                                   "application-icon", "dev.jamiethalacker.window_painter",
                                    "version", Config.VERSION,
-                                   "translator-credits", translators);
+                                   "copyright", _("© 2022-2024 Jamie Murphy"),
+                                   "issue-url", "https://github.com/ItsJamie9494/window-painter/issues",
+                                   "license-type", Gtk.License.GPL_3_0,
+                                   "developers", developers,
+                                   "translator-credits", _("translator-credits"));
         }
 
         private void on_new_game () {
