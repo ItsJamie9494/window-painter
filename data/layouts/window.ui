@@ -39,7 +39,8 @@
                                         <property name="margin-top">8</property>
                                         <child>
                                             <object class="GtkLabel">
-                                                <property name="label" translatable="yes">Moves Remaining:</property>
+                                                <property name="label" translatable="yes">Moves
+                                                    Remaining:</property>
                                                 <style>
                                                     <class name="title-3" />
                                                 </style>
@@ -85,6 +86,16 @@
             </object>
         </property>
     </template>
+
+    <object class="AdwAlertDialog" id="finish_dialog">
+        <property name="default-response">playagain</property>
+        <signal name="response"
+            handler="dialog_response_cb" />
+        <responses>
+            <response id="quit" translatable="yes">_Not Now</response>
+            <response id="playagain" translatable="yes" appearance="suggested">_Play Again</response>
+        </responses>
+    </object>
 
     <menu id="primary_menu">
         <section>

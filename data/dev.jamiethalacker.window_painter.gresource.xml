@@ -4,8 +4,6 @@
     <file alias="window.ui">layouts/window.ui</file>
     <file alias="colour-switcher.ui">layouts/colour-switcher.ui</file>
     <file alias="game-board.ui">layouts/game-board.ui</file>
-    <file alias="victory-dialog.ui">layouts/victory-dialog.ui</file>
-    <file alias="defeat-dialog.ui">layouts/defeat-dialog.ui</file>
     <file alias="difficulty-selector.ui">layouts/difficulty-selector.ui</file>
     <file>style.css</file>
   </gresource>

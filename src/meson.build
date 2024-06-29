@@ -7,9 +7,7 @@ sources = [
   'widgets/difficulty-selector.vala',
   'models/colours.vala',
   'models/difficulty.vala',
-  'objects/signals.vala',
-  'dialogs/victory-dialog.vala',
-  'dialogs/defeat-dialog.vala'
+  'objects/signals.vala'
 ]
 
 deps = [

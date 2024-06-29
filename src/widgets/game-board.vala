@@ -115,8 +115,6 @@ namespace WindowPainter {
         }
         
         public void flood (Colours new_colour) {
-            Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
-
             // Count the move
             moves_remaining--;
             Signals.get_default ().update_move_count (moves_remaining);
@@ -128,12 +126,9 @@ namespace WindowPainter {
             
             if (update_flooded_indices ()) {
                 if (!Application.settings.get_boolean ("infinite-mode")) {
-                    Window.get_default ().hide_moves_container ();
-                    var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
-                    var dialog = new VictoryDialog ();
-                    dialog.set_transient_for (win);
-                    dialog.present ();
-                    app.game_active = true;
+                    Window win = Window.get_default ();
+                    win.hide_moves_container ();
+                    win.end_game (true);
                     return;
                 } else {
                     Signals.get_default ().new_game ();
@@ -143,12 +138,9 @@ namespace WindowPainter {
 
             if (moves_remaining == 0) {
                 if (!Application.settings.get_boolean ("infinite-mode")) {
-                    Window.get_default ().hide_moves_container ();
-                    var win = ((Window)new Utils ().find_ancestor_of_type<Window>(this));
-                    var dialog = new DefeatDialog ();
-                    dialog.set_transient_for (win);
-                    dialog.present ();
-                    app.game_active = false;
+                    Window win = Window.get_default ();
+                    win.hide_moves_container ();
+                    win.end_game (false);
                     return;
                 } else {
                     return;

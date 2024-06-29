@@ -32,6 +32,8 @@ namespace WindowPainter {
         private unowned Gtk.Box moves_remaining_container;
         [GtkChild]
         private unowned Gtk.Label moves_remaining_count;
+        [GtkChild]
+        private unowned Adw.AlertDialog finish_dialog;
 
         public Window (Application app) {
             Object (application: app);
@@ -71,6 +73,35 @@ namespace WindowPainter {
 
         public void hide_moves_container () {
             moves_remaining_container.set_visible (false);
+        }
+
+        // Ends the game
+        public void end_game (bool did_win) {
+            if (did_win) {
+                this.finish_dialog.heading = _("🎉️ You Win!");
+            } else {
+                this.finish_dialog.heading = _("You Lose");
+            }
+
+            this.finish_dialog.present (this);
+            ((Application) this.get_application ()).game_active = false;
+        }
+
+        [GtkCallback]
+        private void dialog_response_cb (string response) {
+            switch (response) {
+                case "playagain":
+                    Signals.get_default ().switch_stack ("difficulty");
+                    this.finish_dialog.close ();
+                    break;
+                case "quit":
+                    this.get_application ().quit ();
+                    break;
+                default:
+                    // Ignore
+                    print ("Unknown Response");
+                    break;
+            }
         }
     }
 }
