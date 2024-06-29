@@ -6,4 +6,8 @@
     <file alias="difficulty-selector.ui">layouts/difficulty-selector.ui</file>
     <file>style.css</file>
   </gresource>
+
+  <gresource prefix="/dev/jamiethalacker/window_painter/gtk">
+    <file alias="help-overlay.ui" preprocess="xml-stripblanks">layouts/help-overlay.ui</file>
+  </gresource>
 </gresources>

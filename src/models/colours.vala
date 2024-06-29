@@ -62,6 +62,25 @@ namespace WindowPainter {
                     assert_not_reached ();
             }
         }
+
+        public uint get_key () {
+            switch (this) {
+                case MESON_RED:
+                    return Gdk.Key.@1;
+                case ELECTRON_YELLOW:
+                    return Gdk.Key.@2;
+                case MUON_GREEN:
+                    return Gdk.Key.@3;
+                case PROTON_BLUE:
+                    return Gdk.Key.@4;
+                case TAU_PURPLE:
+                    return Gdk.Key.@5;
+                case GLUON_BROWN:
+                    return Gdk.Key.@6;
+                default:
+                    assert_not_reached ();
+            }
+        }
         
         public static Colours get_for_pos (int position) {
             return (Colours) position;

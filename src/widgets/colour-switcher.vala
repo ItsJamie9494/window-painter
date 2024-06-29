@@ -33,6 +33,12 @@ namespace WindowPainter {
                 sensitive = false
             };
 
+            // Create ShortcutController
+            Gtk.ShortcutController controller = new Gtk.ShortcutController ();
+            controller.set_scope (Gtk.ShortcutScope.GLOBAL);
+            this.add_controller ((Gtk.EventController) controller);
+
+            // Create Buttons
             for (int i = Colours.MESON_RED; i <= Colours.GLUON_BROWN; i++) {
                 Gtk.ToggleButton grouping_btn = (Gtk.ToggleButton) box.get_first_child ();
                 Gtk.Widget new_btn = (Gtk.Widget) new Gtk.ToggleButton () {
@@ -52,6 +58,12 @@ namespace WindowPainter {
                     ((Gtk.ToggleButton) new_btn).set_group (grouping_btn);
 
                 box.append (new_btn);
+
+                // Shortcuts
+                Gtk.Shortcut shortcut = new Gtk.Shortcut.with_arguments (new Gtk.KeyvalTrigger (((Colours) i).get_key (), Gdk.ModifierType.NO_MODIFIER_MASK),
+                                                                         new Gtk.CallbackAction (shortcut_activated_cb),
+                                                                         "i", i);
+                controller.add_shortcut (shortcut);
             }
 
             this.set_child (box);
@@ -59,6 +71,27 @@ namespace WindowPainter {
             Signals.get_default ().switch_stack.connect ((stack_page) => {
                 this.box.set_sensitive (stack_page == "gameboard");
             });
+        }
+
+        private bool shortcut_activated_cb (Gtk.Widget _, Variant? args) {
+            Window win = Window.get_default ();
+            Application app = (Application) win.get_application ();
+            Gtk.Widget widget = this.box.get_first_child ();
+
+            if (!app.game_active)
+                return false;
+
+            do {
+                Colours btn_colour = widget.get_data ("colour");
+
+                bool active = (Colours) args.get_int32() == btn_colour;
+                if (active) {
+                    ((Gtk.ToggleButton) widget).set_active (active);
+                    return true;
+                }
+            } while ((widget = widget.get_next_sibling ()) != null);
+
+            return false;
         }
 
         private void toggled_cb (Gtk.ToggleButton btn) {
