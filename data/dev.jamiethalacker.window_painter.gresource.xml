@@ -2,7 +2,6 @@
 <gresources>
   <gresource prefix="/dev/jamiethalacker/window_painter">
     <file alias="window.ui">layouts/window.ui</file>
-    <file alias="colour-switcher.ui">layouts/colour-switcher.ui</file>
     <file alias="game-board.ui">layouts/game-board.ui</file>
     <file alias="difficulty-selector.ui">layouts/difficulty-selector.ui</file>
     <file>style.css</file>

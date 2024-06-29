@@ -70,11 +70,13 @@ namespace WindowPainter {
 
             Signals.get_default ().new_game.connect (() => {
                 Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
+                Window win = Window.get_default ();
 
                 app.game_active = true;
                 dispose_ui ();
                 initialise ();
-                Signals.get_default ().set_current_colour (current_colour);
+
+                win.colour_switcher.set_initial_colour (current_colour);
             });
         }
         

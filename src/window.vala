@@ -35,6 +35,9 @@ namespace WindowPainter {
         [GtkChild]
         private unowned Adw.AlertDialog finish_dialog;
 
+        [GtkChild]
+        public unowned ColourSwitcher colour_switcher { public get; }
+
         public Window (Application app) {
             Object (application: app);
 

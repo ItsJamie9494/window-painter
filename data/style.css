@@ -21,3 +21,12 @@
 .gluon-brown {
     background-color: #E0C6AE;
 }
+
+.toggle {
+    transition: 0.2s opacity;
+}
+
+/* TODO: better */
+.toggle:checked {
+    opacity: 0.7;
+}

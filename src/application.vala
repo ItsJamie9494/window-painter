@@ -60,7 +60,6 @@ namespace WindowPainter {
 
             base.startup ();
             
-            typeof (ColourSwitcher).ensure ();
             typeof (GameBoard).ensure ();
             typeof (DifficultySelector).ensure ();
         }

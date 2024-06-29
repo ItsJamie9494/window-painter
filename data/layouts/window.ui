@@ -77,7 +77,7 @@
                                     </object>
                                 </child>
                                 <child>
-                                    <object class="WindowPainterColourSwitcher"></object>
+                                    <object class="WindowPainterColourSwitcher" id="colour_switcher"></object>
                                 </child>
                             </object>
                         </property>

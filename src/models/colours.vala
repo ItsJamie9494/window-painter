@@ -43,9 +43,28 @@ namespace WindowPainter {
                     assert_not_reached ();
             }
         }
+
+        public string get_tooltip () {
+            switch (this) {
+                case MESON_RED:
+                    return _("Red");
+                case ELECTRON_YELLOW:
+                    return _("Yellow");
+                case MUON_GREEN:
+                    return _("Green");
+                case PROTON_BLUE:
+                    return _("Blue");
+                case TAU_PURPLE:
+                    return _("Purple");
+                case GLUON_BROWN:
+                    return _("Brown");
+                default:
+                    assert_not_reached ();
+            }
+        }
         
         public static Colours get_for_pos (int position) {
-            return (Colours)position;
+            return (Colours) position;
         }
         
         public static Colours get_random () {
