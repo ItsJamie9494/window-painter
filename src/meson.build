@@ -6,8 +6,7 @@ sources = [
   'widgets/game-board.vala',
   'widgets/difficulty-selector.vala',
   'models/colours.vala',
-  'models/difficulty.vala',
-  'objects/signals.vala'
+  'models/difficulty.vala'
 ]
 
 deps = [

@@ -36,6 +36,8 @@ namespace WindowPainter {
         private unowned Adw.AlertDialog finish_dialog;
 
         [GtkChild]
+        public unowned GameBoard gameboard { public get; }
+        [GtkChild]
         public unowned ColourSwitcher colour_switcher { public get; }
 
         public Window (Application app) {
@@ -45,22 +47,15 @@ namespace WindowPainter {
                 _window = this;
             }
 
-            Signals.get_default ().switch_stack.connect ((stack_page) => {
-                stack.set_visible_child_name (stack_page);
-            });
-
-            Signals.get_default ().update_move_count.connect ((moves_remaining) => {
-                if (moves_remaining_container.get_visible () != true && !Application.settings.get_boolean ("infinite-mode")) {
-                    moves_remaining_container.set_visible (true);
-                }
-                moves_remaining_count.set_label (moves_remaining.to_string ());
+            stack.notify["visible-child"].connect (() => {
+                colour_switcher.set_sensitive (stack.get_visible_child_name () == "gameboard");
             });
 
             Application.settings.changed.connect ((key) => {
                 if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == true) {
                     if (app.game_active == true) {
                         hide_moves_container ();
-                        Signals.get_default ().new_game ();
+                        this.start_game ();
                     }
                     var toast = new Adw.Toast (_("Infinite Mode Enabled!"));
                     toast.set_timeout (1);
@@ -68,7 +63,7 @@ namespace WindowPainter {
                 }
                 if (key == "infinite-mode" && Application.settings.get_boolean ("infinite-mode") == false) {
                     if (app.game_active == true) {
-                        Signals.get_default ().new_game ();
+                        this.start_game ();
                     }
                 }
             });
@@ -76,6 +71,23 @@ namespace WindowPainter {
 
         public void hide_moves_container () {
             moves_remaining_container.set_visible (false);
+        }
+
+        public void update_moves (int moves) {
+            if (moves_remaining_container.get_visible () != true && !Application.settings.get_boolean ("infinite-mode")) {
+                moves_remaining_container.set_visible (true);
+            }
+            moves_remaining_count.set_label (moves.to_string ());
+        }
+
+        public void reset_game () {
+            hide_moves_container ();
+            this.stack.set_visible_child_name ("difficulty");
+        }
+
+        public void start_game () {
+            this.stack.set_visible_child_name ("gameboard");
+            this.gameboard.new_game ();
         }
 
         // Ends the game
@@ -92,9 +104,10 @@ namespace WindowPainter {
 
         [GtkCallback]
         private void dialog_response_cb (string response) {
+            //  hide_moves_container ();
             switch (response) {
                 case "playagain":
-                    Signals.get_default ().switch_stack ("difficulty");
+                    this.reset_game ();
                     this.finish_dialog.close ();
                     break;
                 case "quit":

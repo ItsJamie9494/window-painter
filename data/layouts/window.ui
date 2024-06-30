@@ -39,8 +39,7 @@
                                         <property name="margin-top">8</property>
                                         <child>
                                             <object class="GtkLabel">
-                                                <property name="label" translatable="yes">Moves
-                                                    Remaining:</property>
+                                                <property name="label" translatable="yes">Moves Remaining:</property>
                                                 <style>
                                                     <class name="title-3" />
                                                 </style>
@@ -70,7 +69,7 @@
                                             <object class="GtkStackPage">
                                                 <property name="name">gameboard</property>
                                                 <property name="child">
-                                                    <object class="WindowPainterGameBoard"></object>
+                                                    <object class="WindowPainterGameBoard" id="gameboard"></object>
                                                 </property>
                                             </object>
                                         </child>

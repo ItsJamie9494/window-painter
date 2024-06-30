@@ -27,10 +27,11 @@ namespace WindowPainter {
         }
 
         construct {
+            this.set_sensitive (false);
+
             // Create FlowBox
             box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8) {
                 halign = Gtk.Align.CENTER,
-                sensitive = false
             };
 
             // Create ShortcutController
@@ -67,10 +68,6 @@ namespace WindowPainter {
             }
 
             this.set_child (box);
-
-            Signals.get_default ().switch_stack.connect ((stack_page) => {
-                this.box.set_sensitive (stack_page == "gameboard");
-            });
         }
 
         private bool shortcut_activated_cb (Gtk.Widget _, Variant? args) {
@@ -96,12 +93,13 @@ namespace WindowPainter {
 
         private void toggled_cb (Gtk.ToggleButton btn) {
             Colours btn_colour = btn.get_data ("colour");
+            Window win = (Window) this.get_root ();
 
             // don't emit anything twice
             if (btn.active != true)
                 return;
 
-            Signals.get_default ().do_button_click (btn_colour);
+            win.gameboard.flood (btn_colour);
         }
 
         public void set_initial_colour (Colours colour) {

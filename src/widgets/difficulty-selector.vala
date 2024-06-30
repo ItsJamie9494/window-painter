@@ -45,6 +45,8 @@ namespace WindowPainter {
 
         [GtkCallback]
         public void save_custom_board () {
+            Window win = ((Window) this.get_root ());
+
             custom_listbox.unselect_all ();
 
             Application.settings.set_int ("difficulty", 3);
@@ -64,8 +66,8 @@ namespace WindowPainter {
                 Application.settings.set_int ("custom-difficulty-moves", int.parse(moves));
             }
 
-            Signals.get_default ().new_game ();
-            Signals.get_default ().switch_stack ("gameboard");
+            win.start_game ();
+
             stack.set_visible_child_name ("main");
         }
 
@@ -80,8 +82,9 @@ namespace WindowPainter {
             for (var i = 0; i < length; i++) {
                 if (listbox.get_row_at_index (i) == source) {
                     Application.settings.set_int ("difficulty", i);
-                    Signals.get_default ().new_game ();
-                    Signals.get_default ().switch_stack ("gameboard");
+                    Window win = ((Window) this.get_root ());
+
+                    win.start_game ();
                 }
             }
         }

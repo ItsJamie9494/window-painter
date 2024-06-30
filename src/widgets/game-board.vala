@@ -63,24 +63,21 @@ namespace WindowPainter {
             flooded_indices = new Gee.ArrayList<int> ();
             
             dispose_ui ();
-            
-            Signals.get_default ().do_button_click.connect ((colour) => {
-                flood (colour);
-            });
+        }
 
-            Signals.get_default ().new_game.connect (() => {
-                Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
-                Window win = Window.get_default ();
+        public void new_game () {
+            Application app = (Application) ((Adw.ApplicationWindow) (this.get_root ())).get_application ();
+            Window win = Window.get_default ();
 
-                app.game_active = true;
-                dispose_ui ();
-                initialise ();
+            app.game_active = true;
+            dispose_ui ();
+            initialise ();
 
-                win.colour_switcher.set_initial_colour (current_colour);
-            });
+            win.colour_switcher.set_initial_colour (current_colour);
         }
         
         private void initialise () {
+            Window win = Window.get_default ();
             difficulty = (Difficulty) Application.settings.get_int ("difficulty");
 
             flooded_indices.clear ();
@@ -94,7 +91,7 @@ namespace WindowPainter {
             flooded_indices.add (0);
             update_flooded_indices ();
 
-            Signals.get_default ().update_move_count (moves_remaining);
+            win.update_moves (moves_remaining);
         }
         
         private void setup_ui () {
@@ -117,9 +114,11 @@ namespace WindowPainter {
         }
         
         public void flood (Colours new_colour) {
+            Window win = Window.get_default ();
+
             // Count the move
             moves_remaining--;
-            Signals.get_default ().update_move_count (moves_remaining);
+            win.update_moves (moves_remaining);
 
             current_colour = new_colour;
             foreach (int index in flooded_indices) {
@@ -128,19 +127,17 @@ namespace WindowPainter {
             
             if (update_flooded_indices ()) {
                 if (!Application.settings.get_boolean ("infinite-mode")) {
-                    Window win = Window.get_default ();
                     win.hide_moves_container ();
                     win.end_game (true);
                     return;
                 } else {
-                    Signals.get_default ().new_game ();
+                    win.start_game ();
                     return;
                 }
             }
 
             if (moves_remaining == 0) {
                 if (!Application.settings.get_boolean ("infinite-mode")) {
-                    Window win = Window.get_default ();
                     win.hide_moves_container ();
                     win.end_game (false);
                     return;

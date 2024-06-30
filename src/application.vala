@@ -75,8 +75,7 @@ namespace WindowPainter {
                 warning ("Difficulty value %i does not exist.\nPermitted values: 1, 2, 3".printf (difficulty));
             } else if (difficulty != 0 && !(difficulty > 3)  && !(difficulty < 0)) {
                 if (settings.set_int ("difficulty", difficulty - 1) == true) {
-                    Signals.get_default ().switch_stack ("gameboard");
-                    Signals.get_default ().new_game ();
+                    ((Window) win).start_game ();
                 }
             }
 
@@ -105,7 +104,10 @@ namespace WindowPainter {
         }
 
         private void on_new_game () {
-            Signals.get_default ().switch_stack ("difficulty");
+            Window win = (Window) this.active_window;
+
+            this.game_active = false;
+            win.reset_game ();
         }
 
         private void infinite_mode_toggle (SimpleAction action, Variant? parameter) {
