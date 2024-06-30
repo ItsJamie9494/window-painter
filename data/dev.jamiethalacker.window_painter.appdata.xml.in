@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>dev.jamiethalacker.window_painter.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
+  <id>dev.jamiethalacker.window_painter.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
   <name>Window Painter</name>
   <summary>Fill the board with the same colour of paint</summary>
-	<description>
-	  <p>Fill the board with the same colour of paint</p>
-	</description>
+  <description>
+    <p>Fill the board with the same colour of paint</p>
+  </description>
   <url type="homepage">https://itsjamie.dev</url>
   <url type="bugtracker">https://github.com/ItsJamie9494/window-painter/issues</url>
+  <url type="vcs-browser">https://github.com/ItsJamie9494/window-painter</url>
+  <url type="translate">https://github.com/ItsJamie9494/window-painter/tree/main/po</url>
+  <launchable type="desktop-id">dev.jamiethalacker.window_painter.desktop</launchable>
   <developer_name>Jamie Murphy</developer_name>
   <screenshots>
     <screenshot type="default">
@@ -47,7 +50,7 @@
     <category>Game</category>
     <category>ArcadeGame</category>
   </categories>
-  <content_rating type="oars-1.0">
+  <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
     <content_attribute id="violence-realistic">none</content_attribute>

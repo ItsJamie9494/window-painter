@@ -4,5 +4,5 @@ Exec=windowpainter
 Icon=dev.jamiethalacker.window_painter
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GTK;Game;ArcadeGame;
 StartupNotify=true
