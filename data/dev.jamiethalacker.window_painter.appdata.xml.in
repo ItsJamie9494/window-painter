@@ -21,6 +21,17 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2024-07-14" version="1.3.0" type="stable">
+      <description>
+        <p>Release 1.3 of Window Painter</p>
+        <ul>
+          <li>Update GNOME Platform</li>
+          <li>Use new Libadwaita widgets</li>
+          <li>Internal Updates</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release date="2023-04-20" version="1.2.0" type="stable">
       <description>
         <p>Release 1.2 of Window Painter</p>
