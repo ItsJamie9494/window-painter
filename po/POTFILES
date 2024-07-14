@@ -1,12 +1,11 @@
 data/dev.jamiethalacker.window_painter.desktop.in
 data/dev.jamiethalacker.window_painter.appdata.xml.in
 data/dev.jamiethalacker.window_painter.gschema.xml
-data/layouts/colour-switcher.ui
-data/layouts/defeat-dialog.ui
 data/layouts/difficulty-selector.ui
 data/layouts/game-board.ui
-data/layouts/victory-dialog.ui
 data/layouts/window.ui
+data/layouts/help-overlay.ui
 src/application.vala
 src/window.vala
+src/colours.vala
 
